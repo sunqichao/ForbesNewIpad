@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E7E73AF8183D9E4C0050E221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AF7183D9E4C0050E221 /* Foundation.framework */; };
+		E7E73AFA183D9E4C0050E221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AF9183D9E4C0050E221 /* CoreGraphics.framework */; };
+		E7E73AFC183D9E4C0050E221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AFB183D9E4C0050E221 /* UIKit.framework */; };
+		E7E73AFE183D9E4C0050E221 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AFD183D9E4C0050E221 /* CoreData.framework */; };
+		E7E73B04183D9E4C0050E221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B02183D9E4C0050E221 /* InfoPlist.strings */; };
+		E7E73B06183D9E4C0050E221 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B05183D9E4C0050E221 /* main.m */; };
+		E7E73B0A183D9E4D0050E221 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B09183D9E4D0050E221 /* AppDelegate.m */; };
+		E7E73B0D183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B0B183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld */; };
+		E7E73B0F183D9E4D0050E221 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B0E183D9E4D0050E221 /* Images.xcassets */; };
+		E7E73B16183D9E4D0050E221 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73B15183D9E4D0050E221 /* XCTest.framework */; };
+		E7E73B17183D9E4D0050E221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AF7183D9E4C0050E221 /* Foundation.framework */; };
+		E7E73B18183D9E4D0050E221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AFB183D9E4C0050E221 /* UIKit.framework */; };
+		E7E73B19183D9E4D0050E221 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E73AFD183D9E4C0050E221 /* CoreData.framework */; };
+		E7E73B21183D9E4D0050E221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B1F183D9E4D0050E221 /* InfoPlist.strings */; };
+		E7E73B23183D9E4D0050E221 /* ForbesNewIpadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B22183D9E4D0050E221 /* ForbesNewIpadTests.m */; };
+		E7E73B2D183D9F070050E221 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B2C183D9F070050E221 /* Storyboard.storyboard */; };
+		E7E73B35183DA2740050E221 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B34183DA2740050E221 /* MainViewController.m */; };
+		E7E73B42183DA3C90050E221 /* IMG_0881.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B37183DA3C90050E221 /* IMG_0881.PNG */; };
+		E7E73B43183DA3C90050E221 /* IMG_0882.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B38183DA3C90050E221 /* IMG_0882.PNG */; };
+		E7E73B44183DA3C90050E221 /* IMG_0883.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B39183DA3C90050E221 /* IMG_0883.PNG */; };
+		E7E73B45183DA3C90050E221 /* IMG_0884.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3A183DA3C90050E221 /* IMG_0884.PNG */; };
+		E7E73B46183DA3C90050E221 /* IMG_0885.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3B183DA3C90050E221 /* IMG_0885.PNG */; };
+		E7E73B47183DA3C90050E221 /* IMG_0886.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3C183DA3C90050E221 /* IMG_0886.PNG */; };
+		E7E73B48183DA3C90050E221 /* IMG_0887.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3D183DA3C90050E221 /* IMG_0887.PNG */; };
+		E7E73B49183DA3C90050E221 /* IMG_0888.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3E183DA3C90050E221 /* IMG_0888.PNG */; };
+		E7E73B4A183DA3C90050E221 /* IMG_0889.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3F183DA3C90050E221 /* IMG_0889.PNG */; };
+		E7E73B4B183DA3C90050E221 /* IMG_0890.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B40183DA3C90050E221 /* IMG_0890.PNG */; };
+		E7E73B4C183DA3C90050E221 /* IMG_0891.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B41183DA3C90050E221 /* IMG_0891.PNG */; };
+		E7E73B4E183DA93C0050E221 /* IMG_0881_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */; };
+		E7E73B54183DACAF0050E221 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B52183DACAF0050E221 /* TodayViewController.m */; };
+		E7E73B55183DACAF0050E221 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B53183DACAF0050E221 /* TodayViewController.xib */; };
+		E7E73B5A183DB58C0050E221 /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B59183DB58C0050E221 /* EScrollerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E7E73B5F183DB8080050E221 /* scrollView_4.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5B183DB8080050E221 /* scrollView_4.png */; };
+		E7E73B60183DB8080050E221 /* scrollView_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5C183DB8080050E221 /* scrollView_3.png */; };
+		E7E73B61183DB8080050E221 /* scrollview_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5D183DB8080050E221 /* scrollview_2.png */; };
+		E7E73B62183DB8080050E221 /* scrollview_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5E183DB8080050E221 /* scrollview_1.png */; };
+		E7E73B64183DD4350050E221 /* IMG_0881_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7E73B1A183D9E4D0050E221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7E73AEC183D9E4C0050E221 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7E73AF3183D9E4C0050E221;
+			remoteInfo = ForbesNewIpad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E7E73AF4183D9E4C0050E221 /* ForbesNewIpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForbesNewIpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E73AF7183D9E4C0050E221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E7E73AF9183D9E4C0050E221 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E7E73AFB183D9E4C0050E221 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E7E73AFD183D9E4C0050E221 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E7E73B01183D9E4C0050E221 /* ForbesNewIpad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ForbesNewIpad-Info.plist"; sourceTree = "<group>"; };
+		E7E73B03183D9E4C0050E221 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7E73B05183D9E4C0050E221 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7E73B07183D9E4D0050E221 /* ForbesNewIpad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForbesNewIpad-Prefix.pch"; sourceTree = "<group>"; };
+		E7E73B08183D9E4D0050E221 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7E73B09183D9E4D0050E221 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7E73B0C183D9E4D0050E221 /* ForbesNewIpad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForbesNewIpad.xcdatamodel; sourceTree = "<group>"; };
+		E7E73B0E183D9E4D0050E221 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E7E73B14183D9E4D0050E221 /* ForbesNewIpadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForbesNewIpadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E73B15183D9E4D0050E221 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E7E73B1E183D9E4D0050E221 /* ForbesNewIpadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ForbesNewIpadTests-Info.plist"; sourceTree = "<group>"; };
+		E7E73B20183D9E4D0050E221 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7E73B22183D9E4D0050E221 /* ForbesNewIpadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForbesNewIpadTests.m; sourceTree = "<group>"; };
+		E7E73B2C183D9F070050E221 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E7E73B33183DA2740050E221 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E7E73B34183DA2740050E221 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E7E73B37183DA3C90050E221 /* IMG_0881.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0881.PNG; sourceTree = "<group>"; };
+		E7E73B38183DA3C90050E221 /* IMG_0882.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0882.PNG; sourceTree = "<group>"; };
+		E7E73B39183DA3C90050E221 /* IMG_0883.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0883.PNG; sourceTree = "<group>"; };
+		E7E73B3A183DA3C90050E221 /* IMG_0884.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0884.PNG; sourceTree = "<group>"; };
+		E7E73B3B183DA3C90050E221 /* IMG_0885.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0885.PNG; sourceTree = "<group>"; };
+		E7E73B3C183DA3C90050E221 /* IMG_0886.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0886.PNG; sourceTree = "<group>"; };
+		E7E73B3D183DA3C90050E221 /* IMG_0887.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0887.PNG; sourceTree = "<group>"; };
+		E7E73B3E183DA3C90050E221 /* IMG_0888.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0888.PNG; sourceTree = "<group>"; };
+		E7E73B3F183DA3C90050E221 /* IMG_0889.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0889.PNG; sourceTree = "<group>"; };
+		E7E73B40183DA3C90050E221 /* IMG_0890.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0890.PNG; sourceTree = "<group>"; };
+		E7E73B41183DA3C90050E221 /* IMG_0891.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0891.PNG; sourceTree = "<group>"; };
+		E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0881_1.PNG; sourceTree = "<group>"; };
+		E7E73B51183DACAF0050E221 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodayViewController.h; path = Controller/jinrijiaodian/TodayViewController.h; sourceTree = "<group>"; };
+		E7E73B52183DACAF0050E221 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodayViewController.m; path = Controller/jinrijiaodian/TodayViewController.m; sourceTree = "<group>"; };
+		E7E73B53183DACAF0050E221 /* TodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodayViewController.xib; path = Controller/jinrijiaodian/TodayViewController.xib; sourceTree = "<group>"; };
+		E7E73B58183DB58C0050E221 /* EScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EScrollerView.h; path = View/EScrollView/EScrollerView.h; sourceTree = "<group>"; };
+		E7E73B59183DB58C0050E221 /* EScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EScrollerView.m; path = View/EScrollView/EScrollerView.m; sourceTree = "<group>"; };
+		E7E73B5B183DB8080050E221 /* scrollView_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollView_4.png; sourceTree = "<group>"; };
+		E7E73B5C183DB8080050E221 /* scrollView_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollView_3.png; sourceTree = "<group>"; };
+		E7E73B5D183DB8080050E221 /* scrollview_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollview_2.png; sourceTree = "<group>"; };
+		E7E73B5E183DB8080050E221 /* scrollview_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollview_1.png; sourceTree = "<group>"; };
+		E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0881_1_1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7E73AF1183D9E4C0050E221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73AFA183D9E4C0050E221 /* CoreGraphics.framework in Frameworks */,
+				E7E73AFE183D9E4C0050E221 /* CoreData.framework in Frameworks */,
+				E7E73AFC183D9E4C0050E221 /* UIKit.framework in Frameworks */,
+				E7E73AF8183D9E4C0050E221 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E73B11183D9E4D0050E221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73B16183D9E4D0050E221 /* XCTest.framework in Frameworks */,
+				E7E73B19183D9E4D0050E221 /* CoreData.framework in Frameworks */,
+				E7E73B18183D9E4D0050E221 /* UIKit.framework in Frameworks */,
+				E7E73B17183D9E4D0050E221 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E7E73AEB183D9E4C0050E221 = {
+			isa = PBXGroup;
+			children = (
+				E7E73AFF183D9E4C0050E221 /* ForbesNewIpad */,
+				E7E73B1C183D9E4D0050E221 /* ForbesNewIpadTests */,
+				E7E73AF6183D9E4C0050E221 /* Frameworks */,
+				E7E73AF5183D9E4C0050E221 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7E73AF5183D9E4C0050E221 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73AF4183D9E4C0050E221 /* ForbesNewIpad.app */,
+				E7E73B14183D9E4D0050E221 /* ForbesNewIpadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7E73AF6183D9E4C0050E221 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73AF7183D9E4C0050E221 /* Foundation.framework */,
+				E7E73AF9183D9E4C0050E221 /* CoreGraphics.framework */,
+				E7E73AFB183D9E4C0050E221 /* UIKit.framework */,
+				E7E73AFD183D9E4C0050E221 /* CoreData.framework */,
+				E7E73B15183D9E4D0050E221 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7E73AFF183D9E4C0050E221 /* ForbesNewIpad */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B56183DB5420050E221 /* View */,
+				E7E73B4F183DAC660050E221 /* Controller */,
+				E7E73B08183D9E4D0050E221 /* AppDelegate.h */,
+				E7E73B09183D9E4D0050E221 /* AppDelegate.m */,
+				E7E73B0E183D9E4D0050E221 /* Images.xcassets */,
+				E7E73B0B183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld */,
+				E7E73B00183D9E4C0050E221 /* Supporting Files */,
+				E7E73B2C183D9F070050E221 /* Storyboard.storyboard */,
+				E7E73B33183DA2740050E221 /* MainViewController.h */,
+				E7E73B34183DA2740050E221 /* MainViewController.m */,
+			);
+			path = ForbesNewIpad;
+			sourceTree = "<group>";
+		};
+		E7E73B00183D9E4C0050E221 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B36183DA3C90050E221 /* NewIpadPic */,
+				E7E73B01183D9E4C0050E221 /* ForbesNewIpad-Info.plist */,
+				E7E73B02183D9E4C0050E221 /* InfoPlist.strings */,
+				E7E73B05183D9E4C0050E221 /* main.m */,
+				E7E73B07183D9E4D0050E221 /* ForbesNewIpad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7E73B1C183D9E4D0050E221 /* ForbesNewIpadTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B22183D9E4D0050E221 /* ForbesNewIpadTests.m */,
+				E7E73B1D183D9E4D0050E221 /* Supporting Files */,
+			);
+			path = ForbesNewIpadTests;
+			sourceTree = "<group>";
+		};
+		E7E73B1D183D9E4D0050E221 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B1E183D9E4D0050E221 /* ForbesNewIpadTests-Info.plist */,
+				E7E73B1F183D9E4D0050E221 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7E73B36183DA3C90050E221 /* NewIpadPic */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */,
+				E7E73B5B183DB8080050E221 /* scrollView_4.png */,
+				E7E73B5C183DB8080050E221 /* scrollView_3.png */,
+				E7E73B5D183DB8080050E221 /* scrollview_2.png */,
+				E7E73B5E183DB8080050E221 /* scrollview_1.png */,
+				E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */,
+				E7E73B37183DA3C90050E221 /* IMG_0881.PNG */,
+				E7E73B38183DA3C90050E221 /* IMG_0882.PNG */,
+				E7E73B39183DA3C90050E221 /* IMG_0883.PNG */,
+				E7E73B3A183DA3C90050E221 /* IMG_0884.PNG */,
+				E7E73B3B183DA3C90050E221 /* IMG_0885.PNG */,
+				E7E73B3C183DA3C90050E221 /* IMG_0886.PNG */,
+				E7E73B3D183DA3C90050E221 /* IMG_0887.PNG */,
+				E7E73B3E183DA3C90050E221 /* IMG_0888.PNG */,
+				E7E73B3F183DA3C90050E221 /* IMG_0889.PNG */,
+				E7E73B40183DA3C90050E221 /* IMG_0890.PNG */,
+				E7E73B41183DA3C90050E221 /* IMG_0891.PNG */,
+			);
+			name = NewIpadPic;
+			path = ../../../Pictures/NewIpadPic;
+			sourceTree = "<group>";
+		};
+		E7E73B4F183DAC660050E221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B50183DAC7B0050E221 /* jinrijiaodian */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E7E73B50183DAC7B0050E221 /* jinrijiaodian */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B51183DACAF0050E221 /* TodayViewController.h */,
+				E7E73B52183DACAF0050E221 /* TodayViewController.m */,
+				E7E73B53183DACAF0050E221 /* TodayViewController.xib */,
+			);
+			name = jinrijiaodian;
+			sourceTree = "<group>";
+		};
+		E7E73B56183DB5420050E221 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B57183DB5470050E221 /* EScrollView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E7E73B57183DB5470050E221 /* EScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B58183DB58C0050E221 /* EScrollerView.h */,
+				E7E73B59183DB58C0050E221 /* EScrollerView.m */,
+			);
+			name = EScrollView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7E73AF3183D9E4C0050E221 /* ForbesNewIpad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7E73B26183D9E4D0050E221 /* Build configuration list for PBXNativeTarget "ForbesNewIpad" */;
+			buildPhases = (
+				E7E73AF0183D9E4C0050E221 /* Sources */,
+				E7E73AF1183D9E4C0050E221 /* Frameworks */,
+				E7E73AF2183D9E4C0050E221 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForbesNewIpad;
+			productName = ForbesNewIpad;
+			productReference = E7E73AF4183D9E4C0050E221 /* ForbesNewIpad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7E73B13183D9E4D0050E221 /* ForbesNewIpadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7E73B29183D9E4D0050E221 /* Build configuration list for PBXNativeTarget "ForbesNewIpadTests" */;
+			buildPhases = (
+				E7E73B10183D9E4D0050E221 /* Sources */,
+				E7E73B11183D9E4D0050E221 /* Frameworks */,
+				E7E73B12183D9E4D0050E221 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7E73B1B183D9E4D0050E221 /* PBXTargetDependency */,
+			);
+			name = ForbesNewIpadTests;
+			productName = ForbesNewIpadTests;
+			productReference = E7E73B14183D9E4D0050E221 /* ForbesNewIpadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7E73AEC183D9E4C0050E221 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "sun qichao";
+				TargetAttributes = {
+					E7E73B13183D9E4D0050E221 = {
+						TestTargetID = E7E73AF3183D9E4C0050E221;
+					};
+				};
+			};
+			buildConfigurationList = E7E73AEF183D9E4C0050E221 /* Build configuration list for PBXProject "ForbesNewIpad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E7E73AEB183D9E4C0050E221;
+			productRefGroup = E7E73AF5183D9E4C0050E221 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7E73AF3183D9E4C0050E221 /* ForbesNewIpad */,
+				E7E73B13183D9E4D0050E221 /* ForbesNewIpadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7E73AF2183D9E4C0050E221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73B46183DA3C90050E221 /* IMG_0885.PNG in Resources */,
+				E7E73B62183DB8080050E221 /* scrollview_1.png in Resources */,
+				E7E73B47183DA3C90050E221 /* IMG_0886.PNG in Resources */,
+				E7E73B49183DA3C90050E221 /* IMG_0888.PNG in Resources */,
+				E7E73B4B183DA3C90050E221 /* IMG_0890.PNG in Resources */,
+				E7E73B42183DA3C90050E221 /* IMG_0881.PNG in Resources */,
+				E7E73B4A183DA3C90050E221 /* IMG_0889.PNG in Resources */,
+				E7E73B45183DA3C90050E221 /* IMG_0884.PNG in Resources */,
+				E7E73B60183DB8080050E221 /* scrollView_3.png in Resources */,
+				E7E73B5F183DB8080050E221 /* scrollView_4.png in Resources */,
+				E7E73B64183DD4350050E221 /* IMG_0881_1_1.png in Resources */,
+				E7E73B4E183DA93C0050E221 /* IMG_0881_1.PNG in Resources */,
+				E7E73B55183DACAF0050E221 /* TodayViewController.xib in Resources */,
+				E7E73B4C183DA3C90050E221 /* IMG_0891.PNG in Resources */,
+				E7E73B04183D9E4C0050E221 /* InfoPlist.strings in Resources */,
+				E7E73B0F183D9E4D0050E221 /* Images.xcassets in Resources */,
+				E7E73B43183DA3C90050E221 /* IMG_0882.PNG in Resources */,
+				E7E73B44183DA3C90050E221 /* IMG_0883.PNG in Resources */,
+				E7E73B48183DA3C90050E221 /* IMG_0887.PNG in Resources */,
+				E7E73B61183DB8080050E221 /* scrollview_2.png in Resources */,
+				E7E73B2D183D9F070050E221 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E73B12183D9E4D0050E221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73B21183D9E4D0050E221 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7E73AF0183D9E4C0050E221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73B0D183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld in Sources */,
+				E7E73B0A183D9E4D0050E221 /* AppDelegate.m in Sources */,
+				E7E73B5A183DB58C0050E221 /* EScrollerView.m in Sources */,
+				E7E73B06183D9E4C0050E221 /* main.m in Sources */,
+				E7E73B35183DA2740050E221 /* MainViewController.m in Sources */,
+				E7E73B54183DACAF0050E221 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E73B10183D9E4D0050E221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E73B23183D9E4D0050E221 /* ForbesNewIpadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7E73B1B183D9E4D0050E221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7E73AF3183D9E4C0050E221 /* ForbesNewIpad */;
+			targetProxy = E7E73B1A183D9E4D0050E221 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7E73B02183D9E4C0050E221 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7E73B03183D9E4C0050E221 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E7E73B1F183D9E4D0050E221 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7E73B20183D9E4D0050E221 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7E73B24183D9E4D0050E221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E7E73B25183D9E4D0050E221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7E73B27183D9E4D0050E221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
+				INFOPLIST_FILE = "ForbesNewIpad/ForbesNewIpad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E7E73B28183D9E4D0050E221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
+				INFOPLIST_FILE = "ForbesNewIpad/ForbesNewIpad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E7E73B2A183D9E4D0050E221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ForbesNewIpad.app/ForbesNewIpad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ForbesNewIpadTests/ForbesNewIpadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E7E73B2B183D9E4D0050E221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ForbesNewIpad.app/ForbesNewIpad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
+				INFOPLIST_FILE = "ForbesNewIpadTests/ForbesNewIpadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7E73AEF183D9E4C0050E221 /* Build configuration list for PBXProject "ForbesNewIpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E73B24183D9E4D0050E221 /* Debug */,
+				E7E73B25183D9E4D0050E221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7E73B26183D9E4D0050E221 /* Build configuration list for PBXNativeTarget "ForbesNewIpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E73B27183D9E4D0050E221 /* Debug */,
+				E7E73B28183D9E4D0050E221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E7E73B29183D9E4D0050E221 /* Build configuration list for PBXNativeTarget "ForbesNewIpadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E73B2A183D9E4D0050E221 /* Debug */,
+				E7E73B2B183D9E4D0050E221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7E73B0B183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7E73B0C183D9E4D0050E221 /* ForbesNewIpad.xcdatamodel */,
+			);
+			currentVersion = E7E73B0C183D9E4D0050E221 /* ForbesNewIpad.xcdatamodel */;
+			path = ForbesNewIpad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E7E73AEC183D9E4C0050E221 /* Project object */;
+}
