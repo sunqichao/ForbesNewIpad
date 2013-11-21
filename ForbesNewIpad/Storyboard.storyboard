@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0881_1.PNG" id="ix3-8x-zfZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0881_1_1.png" id="ix3-8x-zfZ">
                                 <rect key="frame" x="0.0" y="62" width="1024" height="706"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -153,7 +153,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0881_1.PNG" width="1024" height="705"/>
+        <image name="IMG_0881_1_1.png" width="1024" height="705"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

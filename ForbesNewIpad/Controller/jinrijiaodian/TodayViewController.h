@@ -11,4 +11,6 @@
 
 @interface TodayViewController : UIViewController<EScrollerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *lanmu;
+
 @end

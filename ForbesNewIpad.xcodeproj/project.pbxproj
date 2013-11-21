@@ -35,7 +35,6 @@
 		E7E73B4A183DA3C90050E221 /* IMG_0889.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B3F183DA3C90050E221 /* IMG_0889.PNG */; };
 		E7E73B4B183DA3C90050E221 /* IMG_0890.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B40183DA3C90050E221 /* IMG_0890.PNG */; };
 		E7E73B4C183DA3C90050E221 /* IMG_0891.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B41183DA3C90050E221 /* IMG_0891.PNG */; };
-		E7E73B4E183DA93C0050E221 /* IMG_0881_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */; };
 		E7E73B54183DACAF0050E221 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B52183DACAF0050E221 /* TodayViewController.m */; };
 		E7E73B55183DACAF0050E221 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B53183DACAF0050E221 /* TodayViewController.xib */; };
 		E7E73B5A183DB58C0050E221 /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B59183DB58C0050E221 /* EScrollerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -44,6 +43,15 @@
 		E7E73B61183DB8080050E221 /* scrollview_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5D183DB8080050E221 /* scrollview_2.png */; };
 		E7E73B62183DB8080050E221 /* scrollview_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B5E183DB8080050E221 /* scrollview_1.png */; };
 		E7E73B64183DD4350050E221 /* IMG_0881_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */; };
+		E7E73B66183DDB620050E221 /* IMG_089_long.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B65183DDB620050E221 /* IMG_089_long.png */; };
+		E7E73B6B183DE3570050E221 /* KaiquanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B69183DE3570050E221 /* KaiquanViewController.m */; };
+		E7E73B6C183DE3570050E221 /* KaiquanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B6A183DE3570050E221 /* KaiquanViewController.xib */; };
+		E7E73B71183DE51A0050E221 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E73B6F183DE51A0050E221 /* DetailViewController.m */; };
+		E7E73B72183DE51A0050E221 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B70183DE51A0050E221 /* DetailViewController.xib */; };
+		E7E73B7F183DE6C20050E221 /* IMG_08_4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B7B183DE6C20050E221 /* IMG_08_4.PNG */; };
+		E7E73B80183DE6C20050E221 /* IMG_08_3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B7C183DE6C20050E221 /* IMG_08_3.PNG */; };
+		E7E73B81183DE6C20050E221 /* IMG_08_2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B7D183DE6C20050E221 /* IMG_08_2.PNG */; };
+		E7E73B82183DE6C20050E221 /* IMG_08_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E7E73B7E183DE6C20050E221 /* IMG_08_1.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +97,6 @@
 		E7E73B3F183DA3C90050E221 /* IMG_0889.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0889.PNG; sourceTree = "<group>"; };
 		E7E73B40183DA3C90050E221 /* IMG_0890.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0890.PNG; sourceTree = "<group>"; };
 		E7E73B41183DA3C90050E221 /* IMG_0891.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0891.PNG; sourceTree = "<group>"; };
-		E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0881_1.PNG; sourceTree = "<group>"; };
 		E7E73B51183DACAF0050E221 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodayViewController.h; path = Controller/jinrijiaodian/TodayViewController.h; sourceTree = "<group>"; };
 		E7E73B52183DACAF0050E221 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodayViewController.m; path = Controller/jinrijiaodian/TodayViewController.m; sourceTree = "<group>"; };
 		E7E73B53183DACAF0050E221 /* TodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodayViewController.xib; path = Controller/jinrijiaodian/TodayViewController.xib; sourceTree = "<group>"; };
@@ -100,6 +107,17 @@
 		E7E73B5D183DB8080050E221 /* scrollview_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollview_2.png; sourceTree = "<group>"; };
 		E7E73B5E183DB8080050E221 /* scrollview_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollview_1.png; sourceTree = "<group>"; };
 		E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0881_1_1.png; sourceTree = "<group>"; };
+		E7E73B65183DDB620050E221 /* IMG_089_long.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_089_long.png; sourceTree = "<group>"; };
+		E7E73B68183DE3570050E221 /* KaiquanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KaiquanViewController.h; path = Controller/kaiquan/KaiquanViewController.h; sourceTree = "<group>"; };
+		E7E73B69183DE3570050E221 /* KaiquanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KaiquanViewController.m; path = Controller/kaiquan/KaiquanViewController.m; sourceTree = "<group>"; };
+		E7E73B6A183DE3570050E221 /* KaiquanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KaiquanViewController.xib; path = Controller/kaiquan/KaiquanViewController.xib; sourceTree = "<group>"; };
+		E7E73B6E183DE51A0050E221 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Controller/DetailController/DetailViewController.h; sourceTree = "<group>"; };
+		E7E73B6F183DE51A0050E221 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Controller/DetailController/DetailViewController.m; sourceTree = "<group>"; };
+		E7E73B70183DE51A0050E221 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Controller/DetailController/DetailViewController.xib; sourceTree = "<group>"; };
+		E7E73B7B183DE6C20050E221 /* IMG_08_4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_08_4.PNG; sourceTree = "<group>"; };
+		E7E73B7C183DE6C20050E221 /* IMG_08_3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_08_3.PNG; sourceTree = "<group>"; };
+		E7E73B7D183DE6C20050E221 /* IMG_08_2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_08_2.PNG; sourceTree = "<group>"; };
+		E7E73B7E183DE6C20050E221 /* IMG_08_1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_08_1.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,12 +227,16 @@
 		E7E73B36183DA3C90050E221 /* NewIpadPic */ = {
 			isa = PBXGroup;
 			children = (
+				E7E73B7B183DE6C20050E221 /* IMG_08_4.PNG */,
+				E7E73B7C183DE6C20050E221 /* IMG_08_3.PNG */,
+				E7E73B7D183DE6C20050E221 /* IMG_08_2.PNG */,
+				E7E73B7E183DE6C20050E221 /* IMG_08_1.PNG */,
+				E7E73B65183DDB620050E221 /* IMG_089_long.png */,
 				E7E73B63183DD4350050E221 /* IMG_0881_1_1.png */,
 				E7E73B5B183DB8080050E221 /* scrollView_4.png */,
 				E7E73B5C183DB8080050E221 /* scrollView_3.png */,
 				E7E73B5D183DB8080050E221 /* scrollview_2.png */,
 				E7E73B5E183DB8080050E221 /* scrollview_1.png */,
-				E7E73B4D183DA93C0050E221 /* IMG_0881_1.PNG */,
 				E7E73B37183DA3C90050E221 /* IMG_0881.PNG */,
 				E7E73B38183DA3C90050E221 /* IMG_0882.PNG */,
 				E7E73B39183DA3C90050E221 /* IMG_0883.PNG */,
@@ -234,6 +256,8 @@
 		E7E73B4F183DAC660050E221 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7E73B6D183DE4F40050E221 /* DetailController */,
+				E7E73B67183DE33A0050E221 /* kaiquan */,
 				E7E73B50183DAC7B0050E221 /* jinrijiaodian */,
 			);
 			name = Controller;
@@ -264,6 +288,26 @@
 				E7E73B59183DB58C0050E221 /* EScrollerView.m */,
 			);
 			name = EScrollView;
+			sourceTree = "<group>";
+		};
+		E7E73B67183DE33A0050E221 /* kaiquan */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B68183DE3570050E221 /* KaiquanViewController.h */,
+				E7E73B69183DE3570050E221 /* KaiquanViewController.m */,
+				E7E73B6A183DE3570050E221 /* KaiquanViewController.xib */,
+			);
+			name = kaiquan;
+			sourceTree = "<group>";
+		};
+		E7E73B6D183DE4F40050E221 /* DetailController */ = {
+			isa = PBXGroup;
+			children = (
+				E7E73B6E183DE51A0050E221 /* DetailViewController.h */,
+				E7E73B6F183DE51A0050E221 /* DetailViewController.m */,
+				E7E73B70183DE51A0050E221 /* DetailViewController.xib */,
+			);
+			name = DetailController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,22 +386,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E73B46183DA3C90050E221 /* IMG_0885.PNG in Resources */,
+				E7E73B66183DDB620050E221 /* IMG_089_long.png in Resources */,
 				E7E73B62183DB8080050E221 /* scrollview_1.png in Resources */,
+				E7E73B82183DE6C20050E221 /* IMG_08_1.PNG in Resources */,
 				E7E73B47183DA3C90050E221 /* IMG_0886.PNG in Resources */,
 				E7E73B49183DA3C90050E221 /* IMG_0888.PNG in Resources */,
 				E7E73B4B183DA3C90050E221 /* IMG_0890.PNG in Resources */,
+				E7E73B6C183DE3570050E221 /* KaiquanViewController.xib in Resources */,
 				E7E73B42183DA3C90050E221 /* IMG_0881.PNG in Resources */,
+				E7E73B7F183DE6C20050E221 /* IMG_08_4.PNG in Resources */,
+				E7E73B80183DE6C20050E221 /* IMG_08_3.PNG in Resources */,
+				E7E73B81183DE6C20050E221 /* IMG_08_2.PNG in Resources */,
 				E7E73B4A183DA3C90050E221 /* IMG_0889.PNG in Resources */,
 				E7E73B45183DA3C90050E221 /* IMG_0884.PNG in Resources */,
 				E7E73B60183DB8080050E221 /* scrollView_3.png in Resources */,
 				E7E73B5F183DB8080050E221 /* scrollView_4.png in Resources */,
 				E7E73B64183DD4350050E221 /* IMG_0881_1_1.png in Resources */,
-				E7E73B4E183DA93C0050E221 /* IMG_0881_1.PNG in Resources */,
 				E7E73B55183DACAF0050E221 /* TodayViewController.xib in Resources */,
 				E7E73B4C183DA3C90050E221 /* IMG_0891.PNG in Resources */,
 				E7E73B04183D9E4C0050E221 /* InfoPlist.strings in Resources */,
 				E7E73B0F183D9E4D0050E221 /* Images.xcassets in Resources */,
 				E7E73B43183DA3C90050E221 /* IMG_0882.PNG in Resources */,
+				E7E73B72183DE51A0050E221 /* DetailViewController.xib in Resources */,
 				E7E73B44183DA3C90050E221 /* IMG_0883.PNG in Resources */,
 				E7E73B48183DA3C90050E221 /* IMG_0887.PNG in Resources */,
 				E7E73B61183DB8080050E221 /* scrollview_2.png in Resources */,
@@ -383,7 +433,9 @@
 				E7E73B0D183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld in Sources */,
 				E7E73B0A183D9E4D0050E221 /* AppDelegate.m in Sources */,
 				E7E73B5A183DB58C0050E221 /* EScrollerView.m in Sources */,
+				E7E73B71183DE51A0050E221 /* DetailViewController.m in Sources */,
 				E7E73B06183D9E4C0050E221 /* main.m in Sources */,
+				E7E73B6B183DE3570050E221 /* KaiquanViewController.m in Sources */,
 				E7E73B35183DA2740050E221 /* MainViewController.m in Sources */,
 				E7E73B54183DACAF0050E221 /* TodayViewController.m in Sources */,
 			);
