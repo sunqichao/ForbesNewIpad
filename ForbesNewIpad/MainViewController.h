@@ -14,18 +14,23 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
+@property (strong, nonatomic) IBOutlet UIView *channelBarView;
 
-
-- (IBAction)jinrijiaodian:(id)sender;
-- (IBAction)kaiquan:(id)sender;
+- (IBAction)jinritoutiao:(id)sender;
 - (IBAction)zhuanlan:(id)sender;
-- (IBAction)texie:(id)sender;
-- (IBAction)quanqiujingji:(id)sender;
-- (IBAction)gongsiyuchanye:(id)sender;
-- (IBAction)zhengzhiyuzhengce:(id)sender;
+- (IBAction)bangdan:(id)sender;
+- (IBAction)fuhao:(id)sender;
+- (IBAction)chuangye:(id)sender;
 - (IBAction)keji:(id)sender;
-- (IBAction)shichangyujinrong:(id)sender;
-- (IBAction)zhiqushenghuo:(id)sender;
-- (IBAction)shipin:(id)sender;
+- (IBAction)shangye:(id)sender;
+- (IBAction)touzi:(id)sender;
+- (IBAction)chengshi:(id)sender;
+- (IBAction)shenghuo:(id)sender;
+- (IBAction)tuji:(id)sender;
 
+- (IBAction)login:(id)sender;
+
+- (IBAction)registerNumber:(id)sender;
+
+- (IBAction)favoriteArticle:(id)sender;
 @end

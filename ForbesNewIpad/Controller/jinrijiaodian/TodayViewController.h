@@ -7,10 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EScrollerView.h"
 
-@interface TodayViewController : UIViewController<EScrollerViewDelegate>
+@interface TodayViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *lanmu;
+@property (strong ,nonatomic) IBOutlet UITableView *channelNewsTable;
+
+@property (strong ,nonatomic) IBOutlet UIImageView *headImageView;
+
+@property (strong ,nonatomic) IBOutlet UILabel *headLabel;
+
+@property (strong ,nonatomic) IBOutlet UILabel *headDetailLabel;
+
+@property (strong ,nonatomic) IBOutlet UILabel *firstLabel;
+
+@property (strong ,nonatomic) IBOutlet UILabel *secondLabel;
+
+@property (strong ,nonatomic) IBOutlet UILabel *thirdLabel;
+
+
+- (IBAction)clickHeadLine:(id)sender;
+
+- (IBAction)clickFirstNews:(id)sender;
+
+- (IBAction)clickSecondNews:(id)sender;
+
+- (IBAction)clcikThirdNews:(id)sender;
 
 @end

@@ -8,25 +8,48 @@
 
 #import "MainViewController.h"
 #import "TodayViewController.h"
-#import "KaiquanViewController.h"
+#import "ChannelItemViewController.h"
+#import "DetailViewController.h"
+#import "LoginViewController.h"
+#import "ViewController.h"
+#import "FavoriteViewController.h"
+
+
 #define animationTime 1.0
 
 @interface MainViewController ()
 
 @property (nonatomic ,strong) TodayViewController *todayController;
-@property (nonatomic ,strong) KaiquanViewController *kaiquanController;
+@property (nonatomic ,strong) ChannelItemViewController *zhuanLan;
+@property (nonatomic ,strong) DetailViewController *detailController;
+@property (nonatomic ,strong) LoginViewController *loginController;
+@property (nonatomic ,strong) ViewController *resgisterController;
+@property (nonatomic ,strong) FavoriteViewController *favoriteController;
 
 @end
 
 @implementation MainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder*)coder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    
+    if (self =[super initWithCoder:coder]) {
+        
+        // 初始化代码
+        _todayController = [[TodayViewController alloc] initWithCoder:nil];
+        _zhuanLan = [[ChannelItemViewController alloc] initWithCoder:nil];
+        _detailController = [[DetailViewController alloc] initWithCoder:nil];
+        _loginController = [[LoginViewController alloc] initWithCoder:nil];
+        _resgisterController = [[ViewController alloc] initWithCoder:nil];
+        _favoriteController = [[FavoriteViewController alloc] initWithCoder:nil];
+        
+        [self addAppearDetailViewNotification];
+        [self addHidenDetailViewNotification];
+        [self addHidenTopBarViewNotification];
     }
+    
     return self;
+    
 }
 
 
@@ -34,118 +57,244 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _todayController = [[TodayViewController alloc] init];
-    _todayController.view.frame = CGRectMake(0, 118, 1024, 653);
     [self.view addSubview:_todayController.view];
     
-    _kaiquanController = [[KaiquanViewController alloc] init];
-    _kaiquanController.view.frame = CGRectMake(0, 118, 1024, 653);
-    [self.view addSubview:_kaiquanController.view];
-    _kaiquanController.view.hidden = YES;
+    
+    [self.view addSubview:_zhuanLan.view];
+    _zhuanLan.view.hidden = YES;
 
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"IMG_0881.PNG"]];
+    [self.view addSubview:_detailController.view];
+    _detailController.view.hidden = YES;
+    
+    [self.view addSubview:_loginController.view];
+    _loginController.view.hidden = YES;
+    
+    [self.view addSubview:_resgisterController.view];
+    _resgisterController.view.hidden = YES;
+    
+    [self.view addSubview:_favoriteController.view];
+    _favoriteController.view.hidden = YES;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    _todayController.view.frame = CGRectMake(0, 100, 1024, 668);
+    
+    _zhuanLan.view.frame = CGRectMake(0, 100, 1024, 668);
+
+    _detailController.view.frame = CGRectMake(0, 100, 1024, 668);
+
+    _loginController.view.frame = CGRectMake(0, 50, 1024, 668);
+
+    _resgisterController.view.frame = CGRectMake(0, 50, 1024, 668);
+
+    _favoriteController.view.frame = CGRectMake(0, 50, 1024, 668);
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+ 
+#pragma mark - 显示详细页得通知
 
-- (IBAction)jinrijiaodian:(id)sender {
+- (void)addAppearDetailViewNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"AppearDetailViewNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"AppearDetailViewNotification ********");
+         
+         NSString *newsID = [note object];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             _detailController.contentID = newsID;
+             [_detailController getContentData];
+             _detailController.view.hidden = NO;
+             
+         });
+         
+         
+     }];
     
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0881_1_1.png"];
-    }];
-    [self hideAllView];
-    _kaiquanController.view.hidden = YES;
-    _todayController.view.hidden = NO;
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:nil];
+    
 }
 
-- (IBAction)kaiquan:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0882.PNG"];
-    }];
+#pragma mark - 隐藏详细页得通知
+
+- (void)addHidenDetailViewNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"HidenDetailViewNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"HidenDetailViewNotification ********");
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             _detailController.view.hidden = YES;
+             
+         });
+         
+         
+     }];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenDetailViewNotification" object:nil];
+    
+}
+
+#pragma mark - 隐藏登陆注册收藏目录等页面的通知得通知
+
+- (void)addHidenTopBarViewNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"HidenTopBarViewNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"HidenTopBarViewNotification ********");
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self hideTopBarView];
+             
+         });
+         
+         
+     }];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenTopBarViewNotification" object:nil];
+    
+}
+
+
+
+- (void)hideAllView
+{
+    _todayController.view.hidden = YES;
+    _zhuanLan.view.hidden = YES;
+    _loginController.view.hidden = YES;
+}
+
+- (void)hideTopBarView
+{
+    _loginController.view.hidden = YES;
+    _resgisterController.view.hidden = YES;
+    _favoriteController.view.hidden = YES;
+}
+
+- (IBAction)jinritoutiao:(id)sender {
+    NSLog(@"jin ri tou tiao");
+
     [self hideAllView];
+    
+    _todayController.view.hidden = NO;
     
 }
 
 - (IBAction)zhuanlan:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0883.PNG"];
-    }];
+    NSLog(@"zhuan lan");
+    [self hideAllView];
+
+    _zhuanLan.view.hidden = NO;
+}
+
+- (IBAction)bangdan:(id)sender {
+    NSLog(@"bang dan");
+
     [self hideAllView];
 
 }
 
-- (IBAction)texie:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0884.PNG"];
-    }];
+- (IBAction)fuhao:(id)sender {
+    NSLog(@"fu hao");
+
     [self hideAllView];
 
 }
 
-- (IBAction)quanqiujingji:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0885.PNG"];
-    }];
-    [self hideAllView];
+- (IBAction)chuangye:(id)sender {
+    NSLog(@"chuang ye");
 
-}
-
-- (IBAction)gongsiyuchanye:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0886.PNG"];
-    }];
-    [self hideAllView];
-
-}
-
-- (IBAction)zhengzhiyuzhengce:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0887.PNG"];
-    }];
     [self hideAllView];
 
 }
 
 - (IBAction)keji:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0888.PNG"];
-    }];
+    NSLog(@"ke ji");
+
     [self hideAllView];
 
 }
 
-- (IBAction)shichangyujinrong:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0889.PNG"];
-    }];
+- (IBAction)shangye:(id)sender {
+    NSLog(@"shang ye");
+
     [self hideAllView];
 
 }
 
-- (IBAction)zhiqushenghuo:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0890.PNG"];
-    }];
+- (IBAction)touzi:(id)sender {
+    NSLog(@"tou zi");
+
     [self hideAllView];
 
 }
 
-- (IBAction)shipin:(id)sender {
-    [UIView animateWithDuration:animationTime animations:^{
-        self.backgroundImage.image = [UIImage imageNamed:@"IMG_0891.PNG"];
-    }];
+- (IBAction)chengshi:(id)sender {
+    NSLog(@"sheng shi");
+
     [self hideAllView];
 
 }
 
-- (void)hideAllView
-{
-    _todayController.view.hidden = YES;
-    _kaiquanController.view.hidden = NO;
+- (IBAction)shenghuo:(id)sender {
+    NSLog(@"sheng huo");
+
+    [self hideAllView];
+
 }
+
+- (IBAction)tuji:(id)sender {
+    NSLog(@"tu ji");
+
+    [self hideAllView];
+
+}
+
+- (IBAction)login:(id)sender {
+    NSLog(@"login ");
+    
+    [self hideTopBarView];
+    
+    _loginController.view.hidden = NO;
+    
+}
+
+- (IBAction)registerNumber:(id)sender {
+    NSLog(@"resgiter ");
+    
+    [self hideTopBarView];
+    
+    _resgisterController.view.hidden = NO;
+    
+    
+}
+
+- (IBAction)favoriteArticle:(id)sender {
+    NSLog(@"favorite  ");
+    
+    [self hideTopBarView];
+    
+    _favoriteController.view.hidden = NO;
+    
+}
+
 
 @end

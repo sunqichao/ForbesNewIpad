@@ -16,7 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
+    self.reachability = [Reachability reachabilityForInternetConnection];
+    [_reachability startNotifier];
+
     return YES;
 }
 

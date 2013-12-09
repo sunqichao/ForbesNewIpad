@@ -10,8 +10,18 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#define NewIpadHost @"http://app.forbeschina.com"
+#define SQC_appdelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "ASIHTTPRequest.h"
+    #import "CJSONDeserializer.h"
+    #import "Reachability.h"
+    #import "AppDelegate.h"
+    #import "TodayAPI.h"
+    #import "UIImageView+WebCache.h"
+
 #endif

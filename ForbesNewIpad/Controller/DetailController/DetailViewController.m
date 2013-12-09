@@ -7,20 +7,28 @@
 //
 
 #import "DetailViewController.h"
-
+#import "ASIFormDataRequest.h"
+#import "AKOMultiPageTextView.h"
+#import "PageController.h"
 @interface DetailViewController ()
+@property (nonatomic, retain) PageController *contentPage;
 
 @end
 
 @implementation DetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder*)coder
+
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    
+    if (self =[super initWithCoder:coder]) {
+        
+        _contentPage = [[PageController alloc] init];
+                
     }
+    
     return self;
+    
 }
 
 - (void)viewDidLoad
@@ -28,20 +36,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    for (int i=1; i<5; i++) {
-        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0+1024*(i-1), 0, 1024, 699)];
-        imageview.image = [UIImage imageNamed:[NSString stringWithFormat:@"IMG_08_%d.PNG",i]];
-        [_mainScrollView addSubview:imageview];
-    }
+//    [_contentTextView addSubview:_contentPage.view];
     
-    _mainScrollView.contentSize = CGSizeMake(1024*4, 699);
-    _mainScrollView.pagingEnabled = YES;
+    [self.view addSubview:_contentPage.view];
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    _contentPage.view.frame = CGRectMake(0, 0, 1024, 630);
+    _contentPage.multiPageView.frame = CGRectMake(0, 45, 1024, 622);
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+#pragma mark - 关闭的通知
+
+- (IBAction)closeCurrentWindow:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenDetailViewNotification" object:nil];
+    
+    
+}
+
+#pragma mark - 获取新闻内容数据
+- (void)getContentData
+{
+    [TodayAPI getNewsContentByID:_contentID];
+
+
 }
 
 @end
