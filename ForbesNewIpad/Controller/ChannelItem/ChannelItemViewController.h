@@ -10,6 +10,6 @@
 
 @interface ChannelItemViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *newsItem;
+
 
 @end

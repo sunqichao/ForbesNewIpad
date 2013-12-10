@@ -89,9 +89,9 @@
             
              [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.forbeschina.com%@",_headlineData[headImageURLKey]]] placeholderImage:[UIImage imageNamed:@"scrollView_3.png"]];
              
-             _headLabel.text = _headlineData[headTextKey];
+             _headLabel.text = _headlineData[headTextKey]?_headlineData[headTextKey]:@"";
              
-             _headDetailLabel.text = _headlineData[headDetailTextKey];
+             _headDetailLabel.text = _headlineData[headDetailTextKey]?_headlineData[headDetailTextKey]:@"";
 
              
          });
@@ -117,12 +117,14 @@
          _threeHeadlineData = [note object];
          
          dispatch_async(dispatch_get_main_queue(), ^{
+             if ([_threeHeadlineData count]==3) {
+                 _firstLabel.text = [_threeHeadlineData objectAtIndex:0][TextKey];
+                 
+                 _secondLabel.text = [_threeHeadlineData objectAtIndex:1][TextKey];
+                 
+                 _thirdLabel.text = [_threeHeadlineData objectAtIndex:2][TextKey];
+             }
              
-             _firstLabel.text = [_threeHeadlineData objectAtIndex:0][TextKey];
-             
-             _secondLabel.text = [_threeHeadlineData objectAtIndex:1][TextKey];
-             
-             _thirdLabel.text = [_threeHeadlineData objectAtIndex:2][TextKey];
              
          });
          
@@ -191,8 +193,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    
-    [cell setDataSource:[_channelHeadlineData objectAtIndex:indexPath.row]];
+    if ([_channelHeadlineData count]>2) {
+        [cell setDataSource:[_channelHeadlineData objectAtIndex:indexPath.row]];
+
+    }
     
     // Configure the cell...
     

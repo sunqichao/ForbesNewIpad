@@ -10,6 +10,10 @@
 
 @interface ChannelItemCell : UICollectionViewCell
 
+
+@property (nonatomic ,retain) IBOutlet UILabel *title;
+@property (nonatomic ,retain) IBOutlet UILabel *detail;
+
 - (void)setDataSource:(id)dataSource;
 
 + (ChannelItemCell *)cellFromNibNamed:(NSString *)nibName;
