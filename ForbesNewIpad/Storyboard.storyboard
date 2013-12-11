@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="A8G-1J-l18">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="A8G-1J-l18">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -22,144 +22,166 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2rs-A9-AJc">
-                                        <rect key="frame" x="0.0" y="4" width="90" height="53"/>
+                                        <rect key="frame" x="0.0" y="2" width="94" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="今日头条">
+                                        <state key="normal" title="今日头条" image="Highlights.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Highlights_click.png"/>
+                                        <state key="highlighted" image="Highlights_click.png"/>
                                         <connections>
                                             <action selector="jinritoutiao:" destination="A8G-1J-l18" eventType="touchUpInside" id="pnb-IT-ni1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b4P-a5-Nh4">
-                                        <rect key="frame" x="90" y="4" width="90" height="53"/>
+                                        <rect key="frame" x="93" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="专栏">
+                                        <state key="normal" title="专栏" image="Columns.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Columns_click.png"/>
+                                        <state key="highlighted" image="Columns_click.png"/>
                                         <connections>
                                             <action selector="zhuanlan:" destination="A8G-1J-l18" eventType="touchUpInside" id="7UV-3g-ORT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D5F-g6-EUR">
-                                        <rect key="frame" x="180" y="4" width="90" height="53"/>
+                                        <rect key="frame" x="186" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="榜单">
+                                        <state key="normal" title="榜单" image="Lists.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Lists_click.png"/>
+                                        <state key="highlighted" image="Lists_click.png"/>
                                         <connections>
                                             <action selector="bangdan:" destination="A8G-1J-l18" eventType="touchUpInside" id="NCd-3U-AQW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4i5-t1-80h">
-                                        <rect key="frame" x="270" y="4" width="90" height="53"/>
+                                        <rect key="frame" x="278" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="富豪">
+                                        <state key="normal" title="富豪" image="Billionaries.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Billionaries_click.png"/>
+                                        <state key="highlighted" image="Billionaries_click.png"/>
                                         <connections>
                                             <action selector="fuhao:" destination="A8G-1J-l18" eventType="touchUpInside" id="KfY-Ex-LM5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wED-7V-JVN">
-                                        <rect key="frame" x="360" y="5" width="90" height="53"/>
+                                        <rect key="frame" x="372" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="创业">
+                                        <state key="normal" title="创业" image="Venture.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Venture_click.png"/>
+                                        <state key="highlighted" image="Venture_click.png"/>
                                         <connections>
                                             <action selector="chuangye:" destination="A8G-1J-l18" eventType="touchUpInside" id="CHc-iY-3Ui"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8hw-yp-rrP">
-                                        <rect key="frame" x="450" y="4" width="90" height="53"/>
+                                        <rect key="frame" x="464" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="科技">
+                                        <state key="normal" title="科技" image="Technology.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Technology_click.png"/>
+                                        <state key="highlighted" image="Technology_click.png"/>
                                         <connections>
                                             <action selector="keji:" destination="A8G-1J-l18" eventType="touchUpInside" id="oXx-m0-DkS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wco-Vi-cmT">
-                                        <rect key="frame" x="565" y="3" width="90" height="53"/>
+                                        <rect key="frame" x="557" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="商业">
+                                        <state key="normal" title="商业" image="Business.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Business_click.png"/>
+                                        <state key="highlighted" image="Business_click.png"/>
                                         <connections>
                                             <action selector="shangye:" destination="A8G-1J-l18" eventType="touchUpInside" id="T8Z-5T-NIL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gkM-uv-kkb">
-                                        <rect key="frame" x="650" y="2" width="90" height="55"/>
+                                        <rect key="frame" x="653" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="投资">
+                                        <state key="normal" title="投资" image="Investing.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Investing_click.png"/>
+                                        <state key="highlighted" image="Investing_click.png"/>
                                         <connections>
                                             <action selector="touzi:" destination="A8G-1J-l18" eventType="touchUpInside" id="EOp-dk-aoH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="43g-lE-Adv">
-                                        <rect key="frame" x="738" y="0.0" width="90" height="55"/>
+                                        <rect key="frame" x="748" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="城市">
+                                        <state key="normal" title="城市" image="City.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="City_click.png"/>
+                                        <state key="highlighted" image="City_click.png"/>
                                         <connections>
                                             <action selector="chengshi:" destination="A8G-1J-l18" eventType="touchUpInside" id="A9g-hU-8yp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OgA-Ob-RYd">
-                                        <rect key="frame" x="836" y="0.0" width="90" height="55"/>
+                                        <rect key="frame" x="838" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="生活">
+                                        <state key="normal" title="生活" image="Lifestyle.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Lifestyle_click.png"/>
+                                        <state key="highlighted" image="Lifestyle_click.png"/>
                                         <connections>
                                             <action selector="shenghuo:" destination="A8G-1J-l18" eventType="touchUpInside" id="THJ-mu-prX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oCV-3P-NCY">
-                                        <rect key="frame" x="934" y="0.0" width="90" height="55"/>
+                                        <rect key="frame" x="931" y="2" width="93" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="图集">
+                                        <state key="normal" title="图集" image="Video.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="Video_click.png"/>
+                                        <state key="highlighted" image="Video_click.png"/>
                                         <connections>
                                             <action selector="tuji:" destination="A8G-1J-l18" eventType="touchUpInside" id="oqi-1g-vkd"/>
                                         </connections>
@@ -204,7 +226,18 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="backgroundImage" destination="ix3-8x-zfZ" id="tza-hs-cRl"/>
+                        <outlet property="channelBangDan" destination="D5F-g6-EUR" id="NnR-0D-SdZ"/>
                         <outlet property="channelBarView" destination="IHW-1M-izG" id="dpb-Pc-VWp"/>
+                        <outlet property="channelChengShi" destination="43g-lE-Adv" id="hxC-Xu-NBQ"/>
+                        <outlet property="channelChuangYe" destination="wED-7V-JVN" id="g1j-4l-Jmd"/>
+                        <outlet property="channelFuHao" destination="4i5-t1-80h" id="vKT-MX-k66"/>
+                        <outlet property="channelJinritoutian" destination="2rs-A9-AJc" id="1FE-4r-Yyb"/>
+                        <outlet property="channelKeJi" destination="8hw-yp-rrP" id="Gdf-kP-etT"/>
+                        <outlet property="channelShangYe" destination="wco-Vi-cmT" id="K8s-qy-HZl"/>
+                        <outlet property="channelShengHuo" destination="OgA-Ob-RYd" id="RdV-qG-EDW"/>
+                        <outlet property="channelTouZi" destination="gkM-uv-kkb" id="pVo-Ta-aTb"/>
+                        <outlet property="channelTuJi" destination="oCV-3P-NCY" id="5ar-UH-FK1"/>
+                        <outlet property="channelZhuanLan" destination="b4P-a5-Nh4" id="1HN-BQ-Soa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ve-Rw-PU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,6 +246,28 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Billionaries.png" width="93" height="56"/>
+        <image name="Billionaries_click.png" width="93" height="56"/>
+        <image name="Business.png" width="93" height="56"/>
+        <image name="Business_click.png" width="93" height="56"/>
+        <image name="City.png" width="93" height="56"/>
+        <image name="City_click.png" width="93" height="56"/>
+        <image name="Columns.png" width="93" height="56"/>
+        <image name="Columns_click.png" width="93" height="56"/>
+        <image name="Highlights.png" width="94" height="56"/>
+        <image name="Highlights_click.png" width="94" height="56"/>
+        <image name="Investing.png" width="93" height="56"/>
+        <image name="Investing_click.png" width="93" height="56"/>
+        <image name="Lifestyle.png" width="93" height="56"/>
+        <image name="Lifestyle_click.png" width="93" height="56"/>
+        <image name="Lists.png" width="93" height="56"/>
+        <image name="Lists_click.png" width="93" height="56"/>
+        <image name="Technology.png" width="94" height="56"/>
+        <image name="Technology_click.png" width="94" height="56"/>
+        <image name="Venture.png" width="93" height="56"/>
+        <image name="Venture_click.png" width="93" height="56"/>
+        <image name="Video.png" width="92" height="56"/>
+        <image name="Video_click.png" width="92" height="56"/>
         <image name="background.png" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

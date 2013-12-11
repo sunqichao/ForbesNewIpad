@@ -11,5 +11,7 @@
 @interface ChannelItemViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 
 
+- (IBAction)clickChannelHeadLine:(id)sender;
+
 
 @end

@@ -35,16 +35,32 @@
     
     if (self =[super initWithCoder:coder]) {
         
-        // 初始化代码
+        //今日头条
         _todayController = [[TodayViewController alloc] initWithCoder:nil];
+        
+        //专栏
         _zhuanLan = [[ChannelItemViewController alloc] initWithCoder:nil];
+        
+        //详细页
         _detailController = [[DetailViewController alloc] initWithCoder:nil];
+        
+        //登录页
         _loginController = [[LoginViewController alloc] initWithCoder:nil];
+        
+        //注册页
         _resgisterController = [[ViewController alloc] initWithCoder:nil];
+        
+        //收藏页
         _favoriteController = [[FavoriteViewController alloc] initWithCoder:nil];
         
+        
+        //显示详细页的通知
         [self addAppearDetailViewNotification];
+        
+        //隐藏详细页的通知
         [self addHidenDetailViewNotification];
+        
+        //隐藏登录注册收藏之类的页面
         [self addHidenTopBarViewNotification];
     }
     
@@ -74,6 +90,9 @@
     
     [self.view addSubview:_favoriteController.view];
     _favoriteController.view.hidden = YES;
+    
+    //默认是进入今日头条
+    _channelJinritoutian.selected = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -174,7 +193,7 @@
 }
 
 
-
+//隐藏所有的页面
 - (void)hideAllView
 {
     _todayController.view.hidden = YES;
@@ -182,12 +201,32 @@
     _loginController.view.hidden = YES;
 }
 
+//隐藏登陆注册收藏目录等页面
 - (void)hideTopBarView
 {
     _loginController.view.hidden = YES;
     _resgisterController.view.hidden = YES;
     _favoriteController.view.hidden = YES;
 }
+
+//所有按钮处于不选择状态
+- (void)unselectAllButton
+{
+    _channelJinritoutian.selected = NO;
+    _channelZhuanLan.selected = NO;
+    _channelBangDan.selected = NO;
+    _channelFuHao.selected = NO;
+    _channelChuangYe.selected = NO;
+    _channelKeJi.selected = NO;
+    _channelShangYe.selected = NO;
+    _channelTouZi.selected = NO;
+    _channelChengShi.selected = NO;
+    _channelShengHuo.selected = NO;
+    _channelTuJi.selected = NO;
+
+}
+
+#pragma mark - 今日头条
 
 - (IBAction)jinritoutiao:(id)sender {
     NSLog(@"jin ri tou tiao");
@@ -196,77 +235,159 @@
     
     _todayController.view.hidden = NO;
     
+    [self unselectAllButton];
+
+    _channelJinritoutian.selected = YES;
 }
+
+#pragma mark - 专栏
 
 - (IBAction)zhuanlan:(id)sender {
     NSLog(@"zhuan lan");
     [self hideAllView];
 
     _zhuanLan.view.hidden = NO;
+    
+    [self unselectAllButton];
+    
+    _channelZhuanLan.selected = YES;
 }
+
+#pragma mark - 榜单
 
 - (IBAction)bangdan:(id)sender {
     NSLog(@"bang dan");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelBangDan.selected = YES;
 
 }
+
+#pragma mark - 富豪
 
 - (IBAction)fuhao:(id)sender {
     NSLog(@"fu hao");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelFuHao.selected = YES;
 
 }
+
+#pragma mark - 创业
 
 - (IBAction)chuangye:(id)sender {
     NSLog(@"chuang ye");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelChuangYe.selected = YES;
 
 }
+
+#pragma mark - 科技
 
 - (IBAction)keji:(id)sender {
     NSLog(@"ke ji");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelKeJi.selected = YES;
 
 }
+
+#pragma mark - 商业
 
 - (IBAction)shangye:(id)sender {
     NSLog(@"shang ye");
 
     [self hideAllView];
 
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelShangYe.selected = YES;
 }
+
+#pragma mark - 投资
 
 - (IBAction)touzi:(id)sender {
     NSLog(@"tou zi");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelTouZi.selected = YES;
 
 }
+
+#pragma mark - 城市
 
 - (IBAction)chengshi:(id)sender {
     NSLog(@"sheng shi");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelChengShi.selected = YES;
 
 }
+
+#pragma mark - 生活
 
 - (IBAction)shenghuo:(id)sender {
     NSLog(@"sheng huo");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelShengHuo.selected = YES;
 
 }
+
+#pragma mark - 图集
 
 - (IBAction)tuji:(id)sender {
     NSLog(@"tu ji");
 
     [self hideAllView];
+    
+    _zhuanLan.view.hidden = NO;
+
+    [self unselectAllButton];
+    
+    _channelTuJi.selected = YES;
 
 }
+
+#pragma mark - 登录方法
 
 - (IBAction)login:(id)sender {
     NSLog(@"login ");
@@ -277,6 +398,8 @@
     
 }
 
+#pragma mark - 注册方法
+
 - (IBAction)registerNumber:(id)sender {
     NSLog(@"resgiter ");
     
@@ -286,6 +409,8 @@
     
     
 }
+
+#pragma mark - 收藏方法
 
 - (IBAction)favoriteArticle:(id)sender {
     NSLog(@"favorite  ");

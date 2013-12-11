@@ -29,13 +29,16 @@
     
     if (self =[super initWithCoder:coder]) {
         
+        //每个频道头条新闻数组
         _channelHeadlineData = [NSArray array];
         
+        //三条当天头条新闻
         _threeHeadlineData = [NSArray array];
         
+        //今日头条的数据
         _headlineData = [[NSDictionary alloc] init];
         
-        
+        //添加更新界面的通知
         [self addTouTiaoNotification];
         [self addTouTiaoThreeNotification];
         [self addPinDaoTouTiaoNotification];
@@ -53,6 +56,7 @@
     // Do any additional setup after loading the view from its nib.
     self.channelNewsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    //发起请求
     [TodayAPI getTodayHeadInformation];
     [TodayAPI getTodayThreeHeadInformation];
     [TodayAPI getTodayChannelInformation];
@@ -84,14 +88,13 @@
          NSLog(@"TouTiaoNotification ********");
          _headlineData = [note object];
          
-         
          dispatch_async(dispatch_get_main_queue(), ^{
             
              [_headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.forbeschina.com%@",_headlineData[headImageURLKey]]] placeholderImage:[UIImage imageNamed:@"scrollView_3.png"]];
              
-             _headLabel.text = _headlineData[headTextKey]?_headlineData[headTextKey]:@"";
+             _headLabel.text = _headlineData[headTextKey]?_headlineData[headTextKey]:@"没有数据啊";
              
-             _headDetailLabel.text = _headlineData[headDetailTextKey]?_headlineData[headDetailTextKey]:@"";
+             _headDetailLabel.text = _headlineData[headDetailTextKey]?_headlineData[headDetailTextKey]:@"还是没数据";
 
              
          });
@@ -123,6 +126,9 @@
                  _secondLabel.text = [_threeHeadlineData objectAtIndex:1][TextKey];
                  
                  _thirdLabel.text = [_threeHeadlineData objectAtIndex:2][TextKey];
+             }else
+             {
+                 NSLog(@"今日头三条出错");
              }
              
              
@@ -149,7 +155,13 @@
          _channelHeadlineData = [note object];
          
          dispatch_async(dispatch_get_main_queue(), ^{
-             [_channelNewsTable reloadData];
+             if ([_channelHeadlineData count]>5) {
+                 [_channelNewsTable reloadData];
+
+             }else
+             {
+                 NSLog(@"频道头条列表出错");
+             }
 
          });
          
@@ -193,30 +205,32 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    if ([_channelHeadlineData count]>2) {
-        [cell setDataSource:[_channelHeadlineData objectAtIndex:indexPath.row]];
-
-    }
+    [cell setDataSource:[_channelHeadlineData objectAtIndex:indexPath.row]];
     
     // Configure the cell...
     
     return cell;
 }
 
+#pragma mark - 点击频道头条
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:[_channelHeadlineData objectAtIndex:indexPath.row][@"newsid"]];
+
 
 }
 
-
+#pragma mark - 点击今日头条
 
 - (IBAction)clickHeadLine:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:_headlineData[@"newsid"]];
  
     
 }
+
+#pragma mark - 点击今日头三条
 
 - (IBAction)clickFirstNews:(id)sender {
     

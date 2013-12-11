@@ -23,15 +23,17 @@
 {
     
     if (self =[super initWithCoder:coder]) {
+        //collectionview的布局文件
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
+        //初始化collectionview 并把cell一起初始化给它
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         [_collectionView registerClass:[ChannelItemCell class] forCellWithReuseIdentifier:@"ChannelItemCell"];
         [_collectionView setBackgroundColor:[UIColor clearColor]];
         
-
-         [self.view addSubview:_collectionView];
+        //更新界面的通知
+        [self addUpdateViewsNotification];
         
     }
     
@@ -47,14 +49,13 @@
     [self.view addSubview:_collectionView];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    [self arrangeCollectionView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    _collectionView.frame = CGRectMake(0, 300,1024, 350);
+    _collectionView.frame = CGRectMake(0, 350,1024, 350);
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,34 +64,49 @@
     // Dispose of any resources that can be recreated.
 }
 
-//调节collectionview的横竖布局
-- (void)arrangeCollectionView {
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
-    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
-        flowLayout.scrollDirection =  UICollectionViewScrollDirectionVertical;
-    } else {
-        flowLayout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
-    }
-    flowLayout.scrollDirection =  UICollectionViewScrollDirectionVertical;
+#pragma mark - 更新界面的通知
 
-    _collectionView.collectionViewLayout = flowLayout;
-    [_collectionView reloadData];
+- (void)addUpdateViewsNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"PinDaoItemNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"PinDaoTouTiaoNotification ********");
+         
+         _dataSource = [note object];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if ([_dataSource count]>5) {
+                 [_collectionView reloadData];
+                 
+             }else
+             {
+                 NSLog(@"频道页数据出错");
+             }
+             
+         });
+         
+         
+     }];
     
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"PinDaoItemNotification" object:nil];
 }
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return [_dataSource count]+6;
+    return [_dataSource count]+3;
     
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ChannelItemCell";
+    
     ChannelItemCell *cell = (ChannelItemCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
     
     [cell setDataSource:[_dataSource objectAtIndex:indexPath.row]];
 
@@ -109,4 +125,46 @@
     return CGSizeMake(334, 160);
 }
 
+#pragma mark – 点击频道头条新闻
+
+- (IBAction)clickChannelHeadLine:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:[_dataSource objectAtIndex:0][@"newsid"]];
+
+}
+
+#pragma mark – 点击频道新闻
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:[_dataSource objectAtIndex:indexPath.row+1][@"newsid"]];
+
+    
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

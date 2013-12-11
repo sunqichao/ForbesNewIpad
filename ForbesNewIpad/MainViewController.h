@@ -16,6 +16,28 @@
 
 @property (strong, nonatomic) IBOutlet UIView *channelBarView;
 
+@property (weak, nonatomic) IBOutlet UIButton *channelJinritoutian;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelZhuanLan;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelBangDan;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelFuHao;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelChuangYe;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelKeJi;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelShangYe;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelTouZi;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelChengShi;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelShengHuo;
+
+@property (weak, nonatomic) IBOutlet UIButton *channelTuJi;
+
 - (IBAction)jinritoutiao:(id)sender;
 - (IBAction)zhuanlan:(id)sender;
 - (IBAction)bangdan:(id)sender;
