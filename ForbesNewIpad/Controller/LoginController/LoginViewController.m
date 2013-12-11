@@ -42,7 +42,44 @@
 - (IBAction)dismissview:(id)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenTopBarViewNotification" object:nil];
+    
+    [_userName resignFirstResponder];
+    [_keyword resignFirstResponder];
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    
+    
+}
+
+- (IBAction)registerFree:(id)sender {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearRegisterViewNotification" object:nil];
 
     
 }
+
+- (IBAction)login:(id)sender {
+    NSString *name = _userName.text;
+    NSString *keyword = _keyword.text;
+    
+    [TodayAPI loginWithUserName:name keyWord:keyword];
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

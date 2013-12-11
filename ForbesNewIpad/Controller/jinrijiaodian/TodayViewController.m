@@ -10,7 +10,7 @@
 #import "JinritoutiaoCell.h"
 #import "HeadNewsEntity.h"
 #import "TodayAPI.h"
-
+#import "ChannelNewsListEntity.h"
 @interface TodayViewController ()
 
 @property (nonatomic ,strong) NSDictionary *headlineData;
@@ -216,9 +216,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:[_channelHeadlineData objectAtIndex:indexPath.row][@"newsid"]];
+    ChannelNewsListEntity *data = [_channelHeadlineData objectAtIndex:indexPath.row];
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:data.newsid];
+
+    
 
 }
 

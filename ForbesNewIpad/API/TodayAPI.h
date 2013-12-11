@@ -51,13 +51,28 @@
  */
 + (id)getNewsContentByID:(NSString *)newsID;
 
+/*
+ 
+ 根据id得到频道页的新闻
+ 
+ */
++ (id)getChannelNewsByID:(NSString *)CID;
 
 
 
+/*
+ 
+ 登陆
+ 
+ */
++ (void)loginWithUserName:(NSString *)name keyWord:(NSString *)keyWord;
 
-
-
-
+/*
+ 
+ 注册
+ 
+ */
++ (void)registerWithUserName:(NSString *)name nickName:(NSString *)nickName keyWord:(NSString *)keyWord;
 
 
 

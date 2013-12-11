@@ -24,6 +24,7 @@
                                               insertNewObjectForEntityForName:@"ChannelNewsListEntity"
                                               inManagedObjectContext:context];
         
+        channelNews.newsid = [NSString stringWithFormat:@"%@",[dic objectForKey:@"newsid"]?[dic objectForKey:@"newsid"]:@""];
         channelNews.channelName = [NSString stringWithFormat:@"%@",[dic objectForKey:@"category_name"]?[dic objectForKey:@"category_name"]:@""];
         channelNews.mainImage = [NSString stringWithFormat:@"http://www.forbeschina.com%@",[dic objectForKey:@"img"]?[dic objectForKey:@"img"]:@""];
         channelNews.titleText = [NSString stringWithFormat:@"%@",[dic objectForKey:@"title"]?[dic objectForKey:@"title"]:@""];

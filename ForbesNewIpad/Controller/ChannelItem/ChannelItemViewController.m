@@ -14,15 +14,19 @@
 
 @property (nonatomic ,retain) UICollectionView *collectionView;
 
+@property (nonatomic ,copy) NSString *selfcid;
+
 @end
 
 @implementation ChannelItemViewController
 
-- (id)initWithCoder:(NSCoder*)coder
-
+- (id)initWithCoder:(NSCoder*)coder withCid:(NSString *)cid
 {
     
-    if (self =[super initWithCoder:coder]) {
+    if (self = [super initWithCoder:coder]) {
+        
+        self.selfcid = cid;
+        
         //collectionview的布局文件
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -68,7 +72,9 @@
 
 - (void)addUpdateViewsNotification
 {
-    [NSNotificationCenter.defaultCenter addObserverForName:@"PinDaoItemNotification"
+    NSString *notificationName = [NSString stringWithFormat:@"PinDaoItemNotification%@",_selfcid];
+    
+    [NSNotificationCenter.defaultCenter addObserverForName:notificationName
                                                     object:nil
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
@@ -78,7 +84,14 @@
          _dataSource = [note object];
          
          dispatch_async(dispatch_get_main_queue(), ^{
-             if ([_dataSource count]>5) {
+             if ([_dataSource count]>1) {
+                 NSDictionary *dic = [_dataSource objectAtIndex:0];
+                 NSString *urlstr = [SQC_StringUtility getTheRightURL:dic[@"img"]];
+                 
+                 [_mainImageView setImageWithURL:[NSURL URLWithString:urlstr] placeholderImage:[UIImage imageNamed:defaultImage]];
+                 _newtitle.text = [SQC_StringUtility getTheRightContent:dic[@"title"]];
+                 _description.text = [SQC_StringUtility getTheRightContent:dic[@"description"]];
+                 
                  [_collectionView reloadData];
                  
              }else
@@ -98,7 +111,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return [_dataSource count]+3;
+    return [_dataSource count]-1;
     
 }
 
@@ -108,7 +121,7 @@
     
     ChannelItemCell *cell = (ChannelItemCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [cell setDataSource:[_dataSource objectAtIndex:indexPath.row]];
+    [cell setDataSource:[_dataSource objectAtIndex:indexPath.row+1]];
 
     return cell;
 }
@@ -122,7 +135,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(334, 160);
+    return CGSizeMake(334, 220);
 }
 
 #pragma mark – 点击频道头条新闻

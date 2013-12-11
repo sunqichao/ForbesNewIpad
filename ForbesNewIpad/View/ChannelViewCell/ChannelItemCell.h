@@ -16,6 +16,5 @@
 
 - (void)setDataSource:(id)dataSource;
 
-+ (ChannelItemCell *)cellFromNibNamed:(NSString *)nibName;
 
 @end

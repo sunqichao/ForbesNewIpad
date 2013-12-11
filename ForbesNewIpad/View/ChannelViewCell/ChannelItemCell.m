@@ -21,6 +21,8 @@
         _title.font = [UIFont systemFontOfSize:18.0f];
         _title.textAlignment = NSTextAlignmentLeft;
         _title.backgroundColor = [UIColor clearColor];
+        _title.lineBreakMode = NSLineBreakByWordWrapping;
+        _title.numberOfLines = 1;
         [self addSubview:_title];
         
         _detail = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -29,7 +31,7 @@
         _detail.textAlignment = NSTextAlignmentLeft;
         _detail.backgroundColor = [UIColor clearColor];
         _detail.lineBreakMode = NSLineBreakByCharWrapping;
-        _detail.numberOfLines = 2;
+        _detail.numberOfLines = 5;
         [self addSubview:_detail];
         
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(290, 14, 33, 33)];
@@ -59,20 +61,20 @@
 {
     [super layoutSubviews];
     
-    _title.frame = CGRectMake(20, 20, 280, 20);
-    _detail.frame = CGRectMake(20, 55, 300, 50);
+    _title.frame = CGRectMake(20, 20, 260, 20);
+    _detail.frame = CGRectMake(20, 55, 300, 80);
     
 }
 
 - (void)setDataSource:(id)dataSource
 {
     NSDictionary *datasource = (NSDictionary *)dataSource;
+ 
+    self.title.text = [SQC_StringUtility getTheRightContent:datasource[@"title"]];
+    self.detail.text = [SQC_StringUtility getTheRightContent:datasource[@"description"]];
     
-//    self.title.text = datasource[@"title"];
-//    self.detail.text = datasource[@"detail"];
-    
-    self.title.text = @"mei de mei de mei de ";
-    self.detail.text = @"mei de mei de mei de detaile mei de detaile mei de detail";
+//    self.title.text = @"mei de mei de mei de ";
+//    self.detail.text = @"mei de mei de mei de detaile mei de detaile mei de detail";
 }
 
 

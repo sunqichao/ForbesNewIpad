@@ -11,7 +11,22 @@
 #endif
 
 #define NewIpadHost @"http://app.forbeschina.com"
+
 #define SQC_appdelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
+
+#define defaultImage @"scrollView_3.png"
+
+#define cidZhuanLan @"179"
+#define cidBangDan @"171"
+#define cidFuhao @"42"
+#define cidChuangYe @"2"
+#define cidKeJi @"4"
+#define cidShangYe @"3"
+#define cidTouZi @"5"
+#define cidChengShi @"16"
+#define cidShengHuo @"81"
+#define cidTuJi @""
+
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
@@ -23,5 +38,6 @@
     #import "AppDelegate.h"
     #import "TodayAPI.h"
     #import "UIImageView+WebCache.h"
+    #import "SQC_StringUtility.h"
 
 #endif

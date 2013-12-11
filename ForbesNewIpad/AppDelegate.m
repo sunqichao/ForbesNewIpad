@@ -7,19 +7,67 @@
 //
 
 #import "AppDelegate.h"
-
+#import "iRate.h"
+#import "Harpy.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
++ (void)initialize
+{
+    /*
+     
+     评分
+     
+     */
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"com.sunqichao.cancerprevention";
+	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    
+    //enable preview mode
+//    [iRate sharedInstance].previewMode = YES;
+    
+    
+    /*
+     
+     更新提醒
+     
+     */
+    // Set the App ID for your app
+    [[Harpy sharedInstance] setAppID:@"com.sunqichao.cancerprevention"];
+    
+    // (Optional) Set the App Name for your app
+    [[Harpy sharedInstance] setAppName:@"福布斯中文版杂志"];
+    
+    /* (Optional) Set the Alert Type for your app
+     By default, the Singleton is initialized to HarpyAlertTypeOption */
+    [[Harpy sharedInstance] setAlertType:HarpyAlertTypeOption];
+    
+    /* (Optional) If your application is not availabe in the U.S. App Store, you must specify the two-letter
+     country code for the region in which your applicaiton is available. */
+    [[Harpy sharedInstance] setCountryCode:@"86"];
+    
+    // Perform check for new version of your app
+    [[Harpy sharedInstance] checkVersion];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.reachability = [Reachability reachabilityForInternetConnection];
     [_reachability startNotifier];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
+    
 
     return YES;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

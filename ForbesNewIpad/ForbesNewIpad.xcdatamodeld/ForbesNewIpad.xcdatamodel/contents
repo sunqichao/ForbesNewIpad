@@ -3,6 +3,7 @@
     <entity name="ChannelNewsListEntity" representedClassName="ChannelNewsListEntity" syncable="YES">
         <attribute name="channelName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mainImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleDetailText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleText" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -15,7 +16,7 @@
         <attribute name="thirdText" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ChannelNewsListEntity" positionX="126" positionY="189" width="128" height="118"/>
         <element name="HeadNewsEntity" positionX="-126" positionY="189" width="128" height="133"/>
-        <element name="ChannelNewsListEntity" positionX="126" positionY="189" width="128" height="103"/>
     </elements>
 </model>

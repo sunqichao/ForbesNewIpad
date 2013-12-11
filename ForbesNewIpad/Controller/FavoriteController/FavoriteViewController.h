@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavoriteViewController : UIViewController
+@interface FavoriteViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *favoriteList;
+
+
+- (IBAction)dismissView:(id)sender;
+
+- (IBAction)appearWangQi:(id)sender;
+
 
 @end
