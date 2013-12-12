@@ -16,6 +16,6 @@
 
 - (IBAction)closeCurrentWindow:(id)sender;
 
-- (void)getContentData;
-
+- (IBAction)getFavoriteArticle:(id)sender;
+ 
 @end

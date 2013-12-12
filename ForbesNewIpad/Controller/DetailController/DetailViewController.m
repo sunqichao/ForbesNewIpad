@@ -67,12 +67,20 @@
     
 }
 
-#pragma mark - 获取新闻内容数据
-- (void)getContentData
-{
-    [TodayAPI getNewsContentByID:_contentID];
+- (IBAction)getFavoriteArticle:(id)sender {
+    
+    NSString *title = _contentPage.pageData.title;
+    NSString *createAt = _contentPage.pageData.createdAt;
+    
+    if (title&&createAt&&_contentID) {
+        
+        [CoreDataManager writeFavoriteContentToCoreDate:title creatAt:createAt withID:_contentID];
 
-
+    }
+    
+    
 }
+
+
 
 @end

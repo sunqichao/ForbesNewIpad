@@ -20,6 +20,9 @@
 //得到正确的url链接
 + (NSString *)getTheRightURL:(NSString *)str;
 
+//判断是否为空，空就返回@""
++ (NSString *)isEmptyString:(NSString *)str;
+
 //过滤福布斯文章内容
 + (NSString *)getTheRightContent:(NSString *)str;
 

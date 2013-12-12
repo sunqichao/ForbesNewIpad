@@ -39,5 +39,8 @@
     #import "TodayAPI.h"
     #import "UIImageView+WebCache.h"
     #import "SQC_StringUtility.h"
+    #import "CoreDataManager.h"
+
+
 
 #endif

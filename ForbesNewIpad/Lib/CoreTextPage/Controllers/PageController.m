@@ -10,13 +10,12 @@
 #import "AKOMultiPageTextView.h"
 #import "NSString+BundleExtensions.h"
 #import "UIFont+CoreTextExtensions.h"
-
 @interface PageController ()
 
 @property (nonatomic) CGFloat previousScale;
 @property (nonatomic) CGFloat fontSize;
 @property (nonatomic ,retain) UIView *imageview;
-@property (nonatomic ,retain) NSDictionary *dataDiction;
+@property (nonatomic ,retain) ArticleContentEntity *dataDiction;
 @end
 
 
@@ -70,7 +69,7 @@
         UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 300)] autorelease];
         UIImageView *image = [[UIImageView alloc] initWithFrame:view.frame];
         if (_dataDiction) {
-            NSString *imageUrl = [NSString stringWithFormat:@"http://www.forbeschina.com%@",_dataDiction[@"photo_src"]];
+            NSString *imageUrl = [NSString stringWithFormat:@"http://www.forbeschina.com%@",_dataDiction.photoSrc];
             NSURL *url = [NSURL URLWithString:imageUrl];
             
             [image setImageWithURL:url placeholderImage:[UIImage imageNamed:@"scrollView_3.png"]];
@@ -161,12 +160,12 @@
                                                 usingBlock:^(NSNotification *note)
      {
          NSLog(@"UpdateXinWenViewNotification ********");
-         NSDictionary *diction = [note object];
-         
+         ArticleContentEntity *article = [note object];
+         self.pageData = article;
          dispatch_async(dispatch_get_main_queue(), ^{
-             self.dataDiction = diction;
-             self.label.text = diction[@"title"];
-             self.multiPageView.text = diction[@"content"];
+             self.dataDiction = article;
+             self.label.text = article.title;
+             self.multiPageView.text = article.content;
              [self.multiPageView setNeedsDisplay];
              [self.label setNeedsDisplay];
             

@@ -199,9 +199,9 @@
         if(remoteHostStatus == NotReachable)
         {
             //不联网的情况下 从NSUserDefaults读取数据库
-            NSDictionary *diction = [[NSUserDefaults standardUserDefaults] objectForKey:@"getNewsContentInformationKey"];
+            id result = [CoreDataManager getNewsContentByID:newsIDString];
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateXinWenViewNotification" object:diction];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateXinWenViewNotification" object:result];
             
         }
         else
@@ -219,11 +219,14 @@
             
             NSDictionary *diction = [[CJSONDeserializer deserializer] deserialize:data error:&error];
             
-//            [[NSUserDefaults standardUserDefaults] setObject:diction forKey:@"getNewsContentInformationKey"];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateXinWenViewNotification" object:diction];
-
+            if ([CoreDataManager writeNewsContentToCoreData:diction withID:newsIDString]) {
+                
+                id result = [CoreDataManager getNewsContentByID:newsIDString];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateXinWenViewNotification" object:result];
+                
+                
+            }
             
             
         }

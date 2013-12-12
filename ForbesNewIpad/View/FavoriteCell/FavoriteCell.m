@@ -7,7 +7,7 @@
 //
 
 #import "FavoriteCell.h"
-
+#import "FavoriteNewsEntity.h"
 @implementation FavoriteCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -28,8 +28,10 @@
 
 - (void)setDataSource:(id)dataSource
 {
-    NSDictionary *data = (NSDictionary *)dataSource;
+    FavoriteNewsEntity *data = (FavoriteNewsEntity *)dataSource;
 
+    self.title.text = data.title;
+    self.description.text = data.createAt;
 }
 
 + (FavoriteCell *)cellFromNibNamed:(NSString *)nibName

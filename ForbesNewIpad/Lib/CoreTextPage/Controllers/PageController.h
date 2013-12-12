@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AKOMultiColumnTextViewDataSource.h"
+#import "ArticleContentEntity.h"
 
 
 @class AKOMultiPageTextView;
@@ -25,8 +26,7 @@
 @property (nonatomic, retain) IBOutlet AKOMultiPageTextView *multiPageView;
 @property (nonatomic ,copy) NSString *contentID;
 @property (nonatomic ,retain) IBOutlet UIImageView *mainImage;
-
-- (void)getContentData;
+@property (nonatomic ,retain) ArticleContentEntity *pageData;
 
 
 @end

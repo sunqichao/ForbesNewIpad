@@ -257,8 +257,11 @@
          NSString *newsID = [note object];
          
          dispatch_async(dispatch_get_main_queue(), ^{
+             
+             [TodayAPI getNewsContentByID:newsID];
+
              _detailController.contentID = newsID;
-             [_detailController getContentData];
+
              _detailController.view.hidden = NO;
              
          });
@@ -709,6 +712,8 @@
     
     _favoriteController.view.hidden = NO;
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteNotification" object:nil];
+
 }
 
 

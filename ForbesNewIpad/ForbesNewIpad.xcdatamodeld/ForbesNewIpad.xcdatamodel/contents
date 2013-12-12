@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ArticleContentEntity" representedClassName="ArticleContentEntity" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoSrc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shortTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ChannelNewsListEntity" representedClassName="ChannelNewsListEntity" syncable="YES">
         <attribute name="channelName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mainImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="newsid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleDetailText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleText" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteNewsEntity" representedClassName="FavoriteNewsEntity" syncable="YES">
+        <attribute name="createAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="HeadNewsEntity" representedClassName="HeadNewsEntity" syncable="YES">
         <attribute name="firstText" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +31,9 @@
         <attribute name="thirdText" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ChannelNewsListEntity" positionX="126" positionY="189" width="128" height="118"/>
-        <element name="HeadNewsEntity" positionX="-126" positionY="189" width="128" height="133"/>
+        <element name="ChannelNewsListEntity" positionX="-639" positionY="-297" width="128" height="118"/>
+        <element name="HeadNewsEntity" positionX="-873" positionY="-297" width="128" height="133"/>
+        <element name="ArticleContentEntity" positionX="-1413" positionY="-540" width="128" height="163"/>
+        <element name="FavoriteNewsEntity" positionX="-1197" positionY="-522" width="128" height="88"/>
     </elements>
 </model>

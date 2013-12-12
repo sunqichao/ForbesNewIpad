@@ -30,8 +30,38 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self addFavoriteNotification];
 }
+#pragma mark - 更新频道头条新闻得通知
 
+- (void)addFavoriteNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"FavoriteNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"FavoriteNotification ********");
+         
+         _dataSource = [CoreDataManager getFavotieList];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if ([_dataSource count]>0) {
+                 [_mainTableview reloadData];
+                 
+             }else
+             {
+                 NSLog(@"favorite 列表出错");
+             }
+             
+         });
+         
+         
+     }];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteNotification" object:nil];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_dataSource count]+3;
+    return [_dataSource count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -65,6 +65,14 @@ const NSString* REG_PHONE = @"^(([0\\+]\\d{2,3}-?)?(0\\d{2,3})-?)?(\\d{7,8})";//
     
     return result;
 }
+
++ (NSString *)isEmptyString:(NSString *)str
+{
+    NSString *resultStr = str?str:@"";
+    
+    return resultStr;
+}
+
 /*
  
  福布斯专用

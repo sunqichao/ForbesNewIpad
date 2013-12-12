@@ -24,6 +24,8 @@
 		E711686E18585BEC003FF581 /* NSString_RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = E711686B18585BEC003FF581 /* NSString_RegEx.m */; };
 		E711686F18585BEC003FF581 /* SQC_StringUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E711686D18585BEC003FF581 /* SQC_StringUtility.m */; };
 		E72552FA184D740E00F145E9 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E72552F9184D740E00F145E9 /* CoreDataManager.m */; };
+		E752E66E18598B8500F18D79 /* ArticleContentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E752E66D18598B8500F18D79 /* ArticleContentEntity.m */; };
+		E752E6741859A7AB00F18D79 /* FavoriteNewsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E752E6731859A7AB00F18D79 /* FavoriteNewsEntity.m */; };
 		E77267FC184C8FB600FDBF35 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267F6184C8FB600FDBF35 /* CJSONDeserializer.m */; };
 		E77267FD184C8FB600FDBF35 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267F8184C8FB600FDBF35 /* CJSONSerializer.m */; };
 		E77267FE184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267FB184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m */; };
@@ -204,6 +206,10 @@
 		E711686D18585BEC003FF581 /* SQC_StringUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQC_StringUtility.m; path = SQCUtilies/SQC_StringUtility.m; sourceTree = "<group>"; };
 		E72552F8184D740E00F145E9 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = CoreDataEntities/CoreDataManager.h; sourceTree = "<group>"; };
 		E72552F9184D740E00F145E9 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = CoreDataEntities/CoreDataManager.m; sourceTree = "<group>"; };
+		E752E66C18598B8500F18D79 /* ArticleContentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleContentEntity.h; path = CoreDataEntities/ArticleContentEntity.h; sourceTree = "<group>"; };
+		E752E66D18598B8500F18D79 /* ArticleContentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleContentEntity.m; path = CoreDataEntities/ArticleContentEntity.m; sourceTree = "<group>"; };
+		E752E6721859A7AB00F18D79 /* FavoriteNewsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteNewsEntity.h; path = CoreDataEntities/FavoriteNewsEntity.h; sourceTree = "<group>"; };
+		E752E6731859A7AB00F18D79 /* FavoriteNewsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteNewsEntity.m; path = CoreDataEntities/FavoriteNewsEntity.m; sourceTree = "<group>"; };
 		E77267F5184C8FB600FDBF35 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
 		E77267F6184C8FB600FDBF35 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
 		E77267F7184C8FB600FDBF35 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
@@ -589,6 +595,10 @@
 		E7C53D3A184C6C7C003C6751 /* CoreDataEntities */ = {
 			isa = PBXGroup;
 			children = (
+				E752E6721859A7AB00F18D79 /* FavoriteNewsEntity.h */,
+				E752E6731859A7AB00F18D79 /* FavoriteNewsEntity.m */,
+				E752E66C18598B8500F18D79 /* ArticleContentEntity.h */,
+				E752E66D18598B8500F18D79 /* ArticleContentEntity.m */,
 				E7C53D8A184C7ADF003C6751 /* ChannelNewsListEntity.h */,
 				E7C53D8B184C7ADF003C6751 /* ChannelNewsListEntity.m */,
 				E7C53D37184C6C74003C6751 /* HeadNewsEntity.h */,
@@ -1150,6 +1160,7 @@
 				E7E73B0A183D9E4D0050E221 /* AppDelegate.m in Sources */,
 				E7C53D56184C6D27003C6751 /* SDWebImageDownloader.m in Sources */,
 				E7C53D74184C7013003C6751 /* ASIDataCompressor.m in Sources */,
+				E752E6741859A7AB00F18D79 /* FavoriteNewsEntity.m in Sources */,
 				E7E73B5A183DB58C0050E221 /* EScrollerView.m in Sources */,
 				E77267FD184C8FB600FDBF35 /* CJSONSerializer.m in Sources */,
 				E7C53D54184C6D27003C6751 /* SDWebImageCompat.m in Sources */,
@@ -1183,6 +1194,7 @@
 				E711686F18585BEC003FF581 /* SQC_StringUtility.m in Sources */,
 				E7E73B35183DA2740050E221 /* MainViewController.m in Sources */,
 				E7EC9DD51855AC4100E7BAA9 /* ViewController.m in Sources */,
+				E752E66E18598B8500F18D79 /* ArticleContentEntity.m in Sources */,
 				E7C53D73184C7013003C6751 /* ASIAuthenticationDialog.m in Sources */,
 				E7E73B54183DACAF0050E221 /* TodayViewController.m in Sources */,
 			);
