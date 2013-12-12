@@ -55,4 +55,9 @@
 - (IBAction)registerNumber:(id)sender;
 
 - (IBAction)favoriteArticle:(id)sender;
+
+- (IBAction)backToHome:(id)sender;
+
+- (IBAction)openMuLu:(id)sender;
+
 @end

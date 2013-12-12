@@ -16,16 +16,19 @@
 
 @property (nonatomic ,copy) NSString *selfcid;
 
+@property (nonatomic ,copy) NSString *channelT;
+
 @end
 
 @implementation ChannelItemViewController
 
-- (id)initWithCoder:(NSCoder*)coder withCid:(NSString *)cid
+- (id)initWithCoder:(NSCoder*)coder withCid:(NSString *)cid withTitle:(NSString *)title
 {
     
     if (self = [super initWithCoder:coder]) {
         
         self.selfcid = cid;
+        self.channelT = title;
         
         //collectionview的布局文件
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -53,6 +56,8 @@
     [self.view addSubview:_collectionView];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    
+    self.channelTitle.text = _channelT;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -10,8 +10,6 @@
 
 @interface FavoriteViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *favoriteList;
-
 @property (weak, nonatomic) IBOutlet UITableView *mainTableview;
 
 - (IBAction)dismissView:(id)sender;

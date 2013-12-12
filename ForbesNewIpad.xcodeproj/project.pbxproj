@@ -38,6 +38,12 @@
 		E7802548184DBF3300527134 /* PageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7802547184DBF3300527134 /* PageController.xib */; };
 		E780254C184DC13400527134 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7802549184DC13400527134 /* Entitlements.plist */; };
 		E780254D184DC13400527134 /* Polsku.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E780254B184DC13400527134 /* Polsku.ttf */; };
+		E793CFA918595930007A6339 /* channelheadLine.png in Resources */ = {isa = PBXBuildFile; fileRef = E793CFA818595930007A6339 /* channelheadLine.png */; };
+		E793CFAB185967D3007A6339 /* muluBackgroundH.png in Resources */ = {isa = PBXBuildFile; fileRef = E793CFAA185967D3007A6339 /* muluBackgroundH.png */; };
+		E793CFB01859680E007A6339 /* MuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E793CFAE1859680E007A6339 /* MuLuViewController.m */; };
+		E793CFB11859680E007A6339 /* MuLuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E793CFAF1859680E007A6339 /* MuLuViewController.xib */; };
+		E793CFB51859696A007A6339 /* MuLuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E793CFB41859696A007A6339 /* MuLuCell.m */; };
+		E793CFB71859697D007A6339 /* MuLuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E793CFB61859697D007A6339 /* MuLuCell.xib */; };
 		E7C53D31184C33F3003C6751 /* ChannelItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C53D2F184C33F3003C6751 /* ChannelItemViewController.m */; };
 		E7C53D32184C33F3003C6751 /* ChannelItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C53D30184C33F3003C6751 /* ChannelItemViewController.xib */; };
 		E7C53D36184C3D92003C6751 /* JinritoutiaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C53D35184C3D92003C6751 /* JinritoutiaoCell.m */; };
@@ -232,6 +238,14 @@
 		E7802547184DBF3300527134 /* PageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageController.xib; sourceTree = "<group>"; };
 		E7802549184DC13400527134 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E780254B184DC13400527134 /* Polsku.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Polsku.ttf; sourceTree = "<group>"; };
+		E793CFA818595930007A6339 /* channelheadLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channelheadLine.png; sourceTree = "<group>"; };
+		E793CFAA185967D3007A6339 /* muluBackgroundH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muluBackgroundH.png; sourceTree = "<group>"; };
+		E793CFAD1859680E007A6339 /* MuLuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuLuViewController.h; path = Controller/MuLuController/MuLuViewController.h; sourceTree = "<group>"; };
+		E793CFAE1859680E007A6339 /* MuLuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuLuViewController.m; path = Controller/MuLuController/MuLuViewController.m; sourceTree = "<group>"; };
+		E793CFAF1859680E007A6339 /* MuLuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MuLuViewController.xib; path = Controller/MuLuController/MuLuViewController.xib; sourceTree = "<group>"; };
+		E793CFB31859696A007A6339 /* MuLuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuLuCell.h; path = View/MuLuCell/MuLuCell.h; sourceTree = "<group>"; };
+		E793CFB41859696A007A6339 /* MuLuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuLuCell.m; path = View/MuLuCell/MuLuCell.m; sourceTree = "<group>"; };
+		E793CFB61859697D007A6339 /* MuLuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MuLuCell.xib; sourceTree = "<group>"; };
 		E7C53D2E184C33F3003C6751 /* ChannelItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelItemViewController.h; path = Controller/ChannelItem/ChannelItemViewController.h; sourceTree = "<group>"; };
 		E7C53D2F184C33F3003C6751 /* ChannelItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelItemViewController.m; path = Controller/ChannelItem/ChannelItemViewController.m; sourceTree = "<group>"; };
 		E7C53D30184C33F3003C6751 /* ChannelItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelItemViewController.xib; path = Controller/ChannelItem/ChannelItemViewController.xib; sourceTree = "<group>"; };
@@ -582,6 +596,26 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E793CFAC185967ED007A6339 /* MuLuController */ = {
+			isa = PBXGroup;
+			children = (
+				E793CFAD1859680E007A6339 /* MuLuViewController.h */,
+				E793CFAE1859680E007A6339 /* MuLuViewController.m */,
+				E793CFAF1859680E007A6339 /* MuLuViewController.xib */,
+			);
+			name = MuLuController;
+			sourceTree = "<group>";
+		};
+		E793CFB218596941007A6339 /* MuLuCell */ = {
+			isa = PBXGroup;
+			children = (
+				E793CFB31859696A007A6339 /* MuLuCell.h */,
+				E793CFB41859696A007A6339 /* MuLuCell.m */,
+				E793CFB61859697D007A6339 /* MuLuCell.xib */,
+			);
+			name = MuLuCell;
+			sourceTree = "<group>";
+		};
 		E7C53D33184C3D60003C6751 /* JinritoutiaoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +811,7 @@
 		E7E73B4F183DAC660050E221 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E793CFAC185967ED007A6339 /* MuLuController */,
 				E711685C185817B5003FF581 /* WangQiController */,
 				E7116842185803B5003FF581 /* AboutController */,
 				E7EC9DD91855B74600E7BAA9 /* FavoriteController */,
@@ -802,6 +837,7 @@
 		E7E73B56183DB5420050E221 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E793CFB218596941007A6339 /* MuLuCell */,
 				E711685618581103003FF581 /* FavoriteCell */,
 				E7EC9DC918556D7D00E7BAA9 /* ChannelItemCell */,
 				E7C53D33184C3D60003C6751 /* JinritoutiaoCell */,
@@ -882,6 +918,8 @@
 		E7F970461855F9D000015702 /* NewIpadPic */ = {
 			isa = PBXGroup;
 			children = (
+				E793CFAA185967D3007A6339 /* muluBackgroundH.png */,
+				E793CFA818595930007A6339 /* channelheadLine.png */,
 				E711686718585071003FF581 /* yinyingbar.png */,
 				E7116862185818B9003FF581 /* wangqi.png */,
 				E7116840185803A0003FF581 /* informationAbout.png */,
@@ -1087,15 +1125,18 @@
 				E7E73B0F183D9E4D0050E221 /* Images.xcassets in Resources */,
 				E780254D184DC13400527134 /* Polsku.ttf in Resources */,
 				E7F970CA1855F9D000015702 /* Technology.png in Resources */,
+				E793CFAB185967D3007A6339 /* muluBackgroundH.png in Resources */,
 				E7F970A11855F9D000015702 /* iconList.png in Resources */,
 				E7C53D32184C33F3003C6751 /* ChannelItemViewController.xib in Resources */,
 				E7F970B71855F9D000015702 /* IMG_08_1.PNG in Resources */,
 				E7E73B72183DE51A0050E221 /* DetailViewController.xib in Resources */,
+				E793CFB11859680E007A6339 /* MuLuViewController.xib in Resources */,
 				E7F970AB1855F9D000015702 /* IMG_0886.PNG in Resources */,
 				E7F970AA1855F9D000015702 /* IMG_0885.PNG in Resources */,
 				E7116847185803DB003FF581 /* AboutViewController.xib in Resources */,
 				E7F970C31855F9D000015702 /* registerView.png in Resources */,
 				E7F970BF1855F9D000015702 /* Lifestyle_click.png in Resources */,
+				E793CFB71859697D007A6339 /* MuLuCell.xib in Resources */,
 				E7F9709D1855F9D000015702 /* favoriteView.png in Resources */,
 				E7F970B31855F9D000015702 /* IMG_0894.PNG in Resources */,
 				E7116863185818B9003FF581 /* wangqi.png in Resources */,
@@ -1112,6 +1153,7 @@
 				E7E73B2D183D9F070050E221 /* Storyboard.storyboard in Resources */,
 				E7F970931855F9D000015702 /* CellIcon.png in Resources */,
 				E7F970B11855F9D000015702 /* IMG_0892.PNG in Resources */,
+				E793CFA918595930007A6339 /* channelheadLine.png in Resources */,
 				E7F970B01855F9D000015702 /* IMG_0891.PNG in Resources */,
 				E7F970A71855F9D000015702 /* IMG_0882.PNG in Resources */,
 				E7F970C81855F9D000015702 /* scrollView_3.png in Resources */,
@@ -1178,11 +1220,13 @@
 				E72552FA184D740E00F145E9 /* CoreDataManager.m in Sources */,
 				E7C53D36184C3D92003C6751 /* JinritoutiaoCell.m in Sources */,
 				E7C53D53184C6D27003C6751 /* SDImageCache.m in Sources */,
+				E793CFB51859696A007A6339 /* MuLuCell.m in Sources */,
 				E7EC9DDD1855B97400E7BAA9 /* FavoriteViewController.m in Sources */,
 				E7802544184DBEA200527134 /* AKOMultiPageTextView.m in Sources */,
 				E7C53D78184C7013003C6751 /* ASIHTTPRequest.m in Sources */,
 				E7C53D8C184C7ADF003C6751 /* ChannelNewsListEntity.m in Sources */,
 				E711686E18585BEC003FF581 /* NSString_RegEx.m in Sources */,
+				E793CFB01859680E007A6339 /* MuLuViewController.m in Sources */,
 				E7C53D31184C33F3003C6751 /* ChannelItemViewController.m in Sources */,
 				E7802542184DBEA200527134 /* UIFont+CoreTextExtensions.m in Sources */,
 				E7116846185803DB003FF581 /* AboutViewController.m in Sources */,

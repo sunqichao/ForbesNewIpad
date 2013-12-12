@@ -11,8 +11,11 @@
 @interface ChannelItemCell : UICollectionViewCell
 
 
-@property (nonatomic ,retain) IBOutlet UILabel *title;
-@property (nonatomic ,retain) IBOutlet UILabel *detail;
+@property (nonatomic ,retain) UILabel *title;
+@property (nonatomic ,retain) UILabel *detail;
+@property (nonatomic ,retain) UILabel *channel;
+
+@property (nonatomic ,retain) UIImageView *imageview;
 
 - (void)setDataSource:(id)dataSource;
 

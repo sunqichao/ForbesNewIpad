@@ -8,6 +8,7 @@
 
 #import "FavoriteViewController.h"
 #import "FavoriteCell.h"
+#import "FavoriteNewsEntity.h"
 @interface FavoriteViewController ()
 
 @property (nonatomic ,retain) NSArray *dataSource;
@@ -118,12 +119,14 @@
     return cell;
 }
 
-#pragma mark - 点击频道头条
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    FavoriteNewsEntity *data = [_dataSource objectAtIndex:indexPath.row];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppearDetailViewNotification" object:data.newsId];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenTopBarViewNotification" object:nil];
+
     
 }
 

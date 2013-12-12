@@ -15,7 +15,7 @@
 #import "FavoriteViewController.h"
 #import "AboutViewController.h"
 #import "WangQiViewController.h"
-
+#import "MuLuViewController.h"
 
 @interface MainViewController ()
 
@@ -38,7 +38,7 @@
 @property (nonatomic ,strong) FavoriteViewController *favoriteController;
 @property (nonatomic ,strong) AboutViewController *aboutController;
 @property (nonatomic ,strong) WangQiViewController *wangQiController;
-
+@property (nonatomic ,strong) MuLuViewController *muluController;
 
 @end
 
@@ -53,34 +53,34 @@
         _todayController = [[TodayViewController alloc] initWithCoder:nil];
         
         //专栏
-        _zhuanLan = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidZhuanLan];
+        _zhuanLan = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidZhuanLan withTitle:@"专栏"];
 
         //榜单
-        _bangdan = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidBangDan];
+        _bangdan = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidBangDan withTitle:@"榜单"];
 
         //富豪
-        _fuhao = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidFuhao];
+        _fuhao = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidFuhao withTitle:@"富豪"];
 
         //创业
-        _chuangye = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidChuangYe];
+        _chuangye = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidChuangYe withTitle:@"创业"];
 
         //科技
-        _keji = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidKeJi];
+        _keji = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidKeJi withTitle:@"科技"];
 
         //商业
-        _shangye = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidShangYe];
+        _shangye = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidShangYe withTitle:@"商业"];
 
         //投资
-        _touzi = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidTouZi];
+        _touzi = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidTouZi withTitle:@"投资"];
 
         //城市
-        _chengshi = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidChengShi];
+        _chengshi = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidChengShi withTitle:@"城市"];
 
         //生活
-        _shenghuo = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidShengHuo];
+        _shenghuo = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidShengHuo withTitle:@"生活"];
 
         //图集
-        _tuji = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidTuJi];
+        _tuji = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidTuJi withTitle:@"图集"];
 
         //详细页
         _detailController = [[DetailViewController alloc] initWithCoder:nil];
@@ -99,6 +99,9 @@
         
         //往期页
         _wangQiController = [[WangQiViewController alloc] initWithCoder:nil];
+        
+        //目录页
+        _muluController = [[MuLuViewController alloc] initWithCoder:nil];
         
         //显示详细页的通知
         [self addAppearDetailViewNotification];
@@ -192,6 +195,9 @@
     [self.view addSubview:_wangQiController.view];
     _wangQiController.view.hidden = YES;
     
+    [self.view addSubview:_muluController.view];
+    _muluController.view.hidden = YES;
+    
     //默认是进入今日头条
     _channelJinritoutian.selected = YES;
 }
@@ -233,6 +239,8 @@
     _aboutController.view.frame = CGRectMake(0, 50, 1024, 668);
 
     _wangQiController.view.frame = CGRectMake(0, 50, 1024, 668);
+
+    _muluController.view.frame = CGRectMake(0, 50, 1024, 668);
 
 }
 
@@ -415,6 +423,7 @@
     
 }
 
+ 
 #pragma mark - 登陆成功后得通知
 
 - (void)addLoginDoneViewNotification
@@ -478,7 +487,8 @@
     _tuji.view.hidden = YES;
 
 
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HidenDetailViewNotification" object:nil];
+
 }
 
 //隐藏登陆注册收藏目录等页面
@@ -489,6 +499,7 @@
     _favoriteController.view.hidden = YES;
     _aboutController.view.hidden = YES;
     _wangQiController.view.hidden = YES;
+    _muluController.view.hidden = YES;
 }
 
 //所有按钮处于不选择状态
@@ -520,6 +531,7 @@
     [self unselectAllButton];
 
     _channelJinritoutian.selected = YES;
+    
 }
 
 #pragma mark - 专栏
@@ -714,6 +726,30 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteNotification" object:nil];
 
+}
+
+- (IBAction)backToHome:(id)sender {
+    NSLog(@"open home");
+    
+    [self hideAllView];
+    [self hideTopBarView];
+
+    _todayController.view.hidden = NO;
+    
+    [self unselectAllButton];
+    
+    _channelJinritoutian.selected = YES;
+    
+    
+}
+
+- (IBAction)openMuLu:(id)sender {
+    NSLog(@"mulu  ");
+    
+    [self hideTopBarView];
+    
+    _muluController.view.hidden = NO;
+    
 }
 
 
