@@ -371,11 +371,103 @@
 }
 
 
++ (id)getWangqiList
+{
+    dispatch_queue_t queue = dispatch_queue_create("getWangqiListInformation", NULL);
+    
+    dispatch_async(queue, ^(){
+        NetworkStatus remoteHostStatus = [SQC_appdelegate.reachability currentReachabilityStatus];
+        
+        if(remoteHostStatus == NotReachable)
+        {
+            //不联网的情况下 从NSUserDefaults读取数据库
+            NSDictionary *diction = [[NSUserDefaults standardUserDefaults] objectForKey:@"getWangqiListInformation"];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"WangQiNotification" object:diction];
+            
+        }
+        else
+        {
+            //联网状态下 请求接口
+            NSString *URLString = [NSString stringWithFormat:@"%@/api/magazine/index-right-list",NewIpadHost];
+            
+            NSURL *url = [NSURL URLWithString:URLString];
+            ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+            
+            [request startSynchronous];
+            
+            //同步请求，直接取数据
+            NSData *data=[request responseData];
+            NSError *error;
+            
+            NSArray *array = [[CJSONDeserializer deserializer] deserialize:data error:&error];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"getWangqiListInformation"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"WangQiNotification" object:array];
+            
+        }
+        
+    });
+    
+    return @"";
+}
 
 
 
++ (id)getMuLuList
+{
+    NSArray *channelCid = [[NSArray alloc] initWithObjects:cidZhuanLan,cidBangDan,cidFuhao,cidChuangYe,cidKeJi,cidShangYe,cidTouZi,cidChengShi,cidShengHuo, nil];
+    
+    dispatch_queue_t queue = dispatch_queue_create("getMuLuListInformation", NULL);
+    
+    dispatch_async(queue, ^(){
+        NetworkStatus remoteHostStatus = [SQC_appdelegate.reachability currentReachabilityStatus];
+        
+        if(remoteHostStatus == NotReachable)
+        {
+            //不联网的情况下 从NSUserDefaults读取数据库
+//            NSDictionary *diction = [[NSUserDefaults standardUserDefaults] objectForKey:@"getMuLuListInformation"];
+//            
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"WangQiNotification" object:diction];
+//            
+        }
+        else
+        {
+            NSMutableArray *muluArray = [[NSMutableArray alloc] init];
+            
+            for (int i=0; i<[channelCid count]; i++) {
+                NSString *URLString = [NSString stringWithFormat:@"%@/api/news/channel-main",NewIpadHost];
+                
+                NSURL *url = [NSURL URLWithString:URLString];
+                ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+                [request setPostValue:[channelCid objectAtIndex:i] forKey:@"cid"];
+                [request startSynchronous];
+                
+                NSData *data=[request responseData];
+                NSError *error;
+                
+                NSArray *array = [[CJSONDeserializer deserializer] deserialize:data error:&error];
+                
+                [muluArray addObject:array];
+                
+               
+            }
+            
+            
+//            [[NSUserDefaults standardUserDefaults] setObject:muluArray forKey:@"getMuLuListInformation"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MuLuNotification" object:muluArray];
+            
+        }
+        
+    });
 
-
+    
+    return @"";
+}
 
 
 

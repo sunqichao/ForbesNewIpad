@@ -43,6 +43,10 @@
                     <rect key="frame" x="704" y="80" width="310" height="641"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2be-ER-a1v"/>
+                        <outlet property="delegate" destination="-1" id="urc-Ax-4fS"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

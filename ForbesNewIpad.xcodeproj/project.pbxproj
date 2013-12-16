@@ -29,6 +29,10 @@
 		E77267FC184C8FB600FDBF35 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267F6184C8FB600FDBF35 /* CJSONDeserializer.m */; };
 		E77267FD184C8FB600FDBF35 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267F8184C8FB600FDBF35 /* CJSONSerializer.m */; };
 		E77267FE184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E77267FB184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m */; };
+		E7793A03185ED10E00D4BB1B /* WangQiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7793A02185ED10E00D4BB1B /* WangQiCell.m */; };
+		E7793A05185ED11900D4BB1B /* WangQiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7793A04185ED11900D4BB1B /* WangQiCell.xib */; };
+		E7793A0A185EFB4000D4BB1B /* MuLuSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7793A09185EFB4000D4BB1B /* MuLuSection.xib */; };
+		E7793A0D185EFBFF00D4BB1B /* MuLuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7793A0C185EFBFF00D4BB1B /* MuLuView.m */; };
 		E7802540184DBEA200527134 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7802533184DBEA100527134 /* PageController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E7802541184DBEA200527134 /* NSString+BundleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E7802538184DBEA100527134 /* NSString+BundleExtensions.m */; };
 		E7802542184DBEA200527134 /* UIFont+CoreTextExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E780253A184DBEA100527134 /* UIFont+CoreTextExtensions.m */; };
@@ -223,6 +227,12 @@
 		E77267F9184C8FB600FDBF35 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		E77267FA184C8FB600FDBF35 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
 		E77267FB184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		E7793A01185ED10E00D4BB1B /* WangQiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WangQiCell.h; sourceTree = "<group>"; };
+		E7793A02185ED10E00D4BB1B /* WangQiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WangQiCell.m; sourceTree = "<group>"; };
+		E7793A04185ED11900D4BB1B /* WangQiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WangQiCell.xib; path = ForbesNewIpad/WangQiCell.xib; sourceTree = SOURCE_ROOT; };
+		E7793A09185EFB4000D4BB1B /* MuLuSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MuLuSection.xib; sourceTree = "<group>"; };
+		E7793A0B185EFBFF00D4BB1B /* MuLuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuLuView.h; path = View/MuLuCell/MuLuView.h; sourceTree = "<group>"; };
+		E7793A0C185EFBFF00D4BB1B /* MuLuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuLuView.m; path = View/MuLuCell/MuLuView.m; sourceTree = "<group>"; };
 		E7802532184DBEA100527134 /* PageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageController.h; sourceTree = "<group>"; };
 		E7802533184DBEA100527134 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
 		E7802535184DBEA100527134 /* AKOMultiColumnTextViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOMultiColumnTextViewDataSource.h; sourceTree = "<group>"; };
@@ -535,6 +545,17 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		E7793A00185ED10E00D4BB1B /* WangQiCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7793A01185ED10E00D4BB1B /* WangQiCell.h */,
+				E7793A02185ED10E00D4BB1B /* WangQiCell.m */,
+				E7793A04185ED11900D4BB1B /* WangQiCell.xib */,
+			);
+			name = WangQiCell;
+			path = View/WangQiCell;
+			sourceTree = "<group>";
+		};
 		E7802530184DBEA100527134 /* CoreTextPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +633,9 @@
 				E793CFB31859696A007A6339 /* MuLuCell.h */,
 				E793CFB41859696A007A6339 /* MuLuCell.m */,
 				E793CFB61859697D007A6339 /* MuLuCell.xib */,
+				E7793A0B185EFBFF00D4BB1B /* MuLuView.h */,
+				E7793A0C185EFBFF00D4BB1B /* MuLuView.m */,
+				E7793A09185EFB4000D4BB1B /* MuLuSection.xib */,
 			);
 			name = MuLuCell;
 			sourceTree = "<group>";
@@ -772,8 +796,6 @@
 				E7E73B0B183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld */,
 				E7E73B00183D9E4C0050E221 /* Supporting Files */,
 				E7E73B2C183D9F070050E221 /* Storyboard.storyboard */,
-				E7E73B33183DA2740050E221 /* MainViewController.h */,
-				E7E73B34183DA2740050E221 /* MainViewController.m */,
 			);
 			path = ForbesNewIpad;
 			sourceTree = "<group>";
@@ -811,6 +833,8 @@
 		E7E73B4F183DAC660050E221 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7E73B33183DA2740050E221 /* MainViewController.h */,
+				E7E73B34183DA2740050E221 /* MainViewController.m */,
 				E793CFAC185967ED007A6339 /* MuLuController */,
 				E711685C185817B5003FF581 /* WangQiController */,
 				E7116842185803B5003FF581 /* AboutController */,
@@ -837,6 +861,7 @@
 		E7E73B56183DB5420050E221 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7793A00185ED10E00D4BB1B /* WangQiCell */,
 				E793CFB218596941007A6339 /* MuLuCell */,
 				E711685618581103003FF581 /* FavoriteCell */,
 				E7EC9DC918556D7D00E7BAA9 /* ChannelItemCell */,
@@ -1096,6 +1121,7 @@
 				E711685B1858114C003FF581 /* FavoriteCell.xib in Resources */,
 				E7F970A31855F9D000015702 /* IMG_0881.PNG in Resources */,
 				E7F970991855F9D000015702 /* ContactTitleBorder.png in Resources */,
+				E7793A0A185EFB4000D4BB1B /* MuLuSection.xib in Resources */,
 				E7F970CC1855F9D000015702 /* Venture.png in Resources */,
 				E7F9709C1855F9D000015702 /* Delicacies_click.png in Resources */,
 				E7F970B91855F9D000015702 /* IMG_08_3.PNG in Resources */,
@@ -1155,6 +1181,7 @@
 				E7F970B11855F9D000015702 /* IMG_0892.PNG in Resources */,
 				E793CFA918595930007A6339 /* channelheadLine.png in Resources */,
 				E7F970B01855F9D000015702 /* IMG_0891.PNG in Resources */,
+				E7793A05185ED11900D4BB1B /* WangQiCell.xib in Resources */,
 				E7F970A71855F9D000015702 /* IMG_0882.PNG in Resources */,
 				E7F970C81855F9D000015702 /* scrollView_3.png in Resources */,
 				E711684C18580AE5003FF581 /* iRate.bundle in Resources */,
@@ -1192,6 +1219,7 @@
 				E7E73B0D183D9E4D0050E221 /* ForbesNewIpad.xcdatamodeld in Sources */,
 				E7C53D5B184C6D27003C6751 /* UIImageView+WebCache.m in Sources */,
 				E7C53D57184C6D27003C6751 /* SDWebImageDownloaderOperation.m in Sources */,
+				E7793A0D185EFBFF00D4BB1B /* MuLuView.m in Sources */,
 				E7C53D58184C6D27003C6751 /* SDWebImageManager.m in Sources */,
 				E711685518580C44003FF581 /* Harpy.m in Sources */,
 				E7C53D90184C7C5A003C6751 /* TodayAPI.m in Sources */,
@@ -1224,6 +1252,7 @@
 				E7EC9DDD1855B97400E7BAA9 /* FavoriteViewController.m in Sources */,
 				E7802544184DBEA200527134 /* AKOMultiPageTextView.m in Sources */,
 				E7C53D78184C7013003C6751 /* ASIHTTPRequest.m in Sources */,
+				E7793A03185ED10E00D4BB1B /* WangQiCell.m in Sources */,
 				E7C53D8C184C7ADF003C6751 /* ChannelNewsListEntity.m in Sources */,
 				E711686E18585BEC003FF581 /* NSString_RegEx.m in Sources */,
 				E793CFB01859680E007A6339 /* MuLuViewController.m in Sources */,
