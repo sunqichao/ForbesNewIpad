@@ -27,6 +27,7 @@
 #define cidShengHuo @"81"
 #define cidTuJi @""
 
+#define ChannelAnimationTime 1.0f
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>

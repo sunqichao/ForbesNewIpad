@@ -40,6 +40,13 @@
 @property (nonatomic ,strong) WangQiViewController *wangQiController;
 @property (nonatomic ,strong) MuLuViewController *muluController;
 
+@property (nonatomic ,strong) NSArray *channelArray;
+@property (nonatomic ,strong) NSArray *channelButtonArray;
+@property (nonatomic ,strong) NSArray *channelCid;
+@property (nonatomic ,assign) int currentChannelIndex;
+
+
+
 @end
 
 @implementation MainViewController
@@ -82,6 +89,15 @@
         //图集
         _tuji = [[ChannelItemViewController alloc] initWithCoder:nil withCid:cidTuJi withTitle:@"图集"];
 
+        //存放频道的数组
+        _channelArray = [[NSArray alloc] initWithObjects:_todayController,_zhuanLan,_bangdan,_fuhao,_chuangye,_keji,_shangye,_touzi,_chengshi,_shenghuo,_tuji, nil];
+        
+        //频道cid
+        _channelCid = [[NSArray alloc] initWithObjects:cidZhuanLan,cidBangDan,cidFuhao,cidChuangYe,cidKeJi,cidShangYe,cidTouZi,cidChengShi,cidShengHuo,cidTuJi, nil];
+        
+        //当前频道的索引
+        _currentChannelIndex = 0;
+        
         //详细页
         _detailController = [[DetailViewController alloc] initWithCoder:nil];
         
@@ -129,6 +145,12 @@
         
         //注册成功后
         [self addRegisterDoneViewNotification];
+        
+        //下一频道的通知
+        [self addChageChannelNextNotification];
+        
+        //上一频道的通知
+        [self addChageChannelLastNotification];
     }
     
     return self;
@@ -143,9 +165,9 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 
+    _channelButtonArray = [[NSArray alloc] initWithObjects:_channelJinritoutian,_channelZhuanLan,_channelBangDan,_channelFuHao,_channelChuangYe,_channelKeJi,_channelShangYe,_channelTouZi,_channelChengShi,_channelShengHuo,_channelTuJi, nil];
     
     [self.view addSubview:_todayController.view];
-    
     
     [self.view addSubview:_zhuanLan.view];
     _zhuanLan.view.hidden = YES;
@@ -200,6 +222,21 @@
     
     //默认是进入今日头条
     _channelJinritoutian.selected = YES;
+    
+    UISwipeGestureRecognizer *recognizer;
+    
+    //向上一频道翻的手势
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    
+    [[self view] addGestureRecognizer:recognizer];
+    
+    //下一频道翻的手势
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [[self view] addGestureRecognizer:recognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -250,7 +287,165 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
- 
+
+#pragma mark - 左右滑动的手势
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
+        
+        NSLog(@"下一频道");
+        //执行程序
+        if (_currentChannelIndex==([_channelArray count]-1)) {
+            
+        }else
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ChageChannelNextNotification" object:nil];
+
+        }
+        
+        
+    }
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+        
+        NSLog(@"上一频道");
+        //执行程序
+        if (!_currentChannelIndex==0) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ChageChannelLastNotification" object:nil];
+
+        }
+        
+    }
+    
+}
+
+
+#pragma mark - 下一频道执行动画的通知
+- (void)addChageChannelNextNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"ChageChannelNextNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"ChageChannelNextNotification ********");
+         
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             
+             int index = _currentChannelIndex;
+             
+             //变换顶部频道按钮
+             [self unselectAllButton];
+             UIButton *currentButton = [_channelButtonArray objectAtIndex:_currentChannelIndex+1];
+             currentButton.selected = YES;
+             
+             //请求数据
+             NSString *cidStr = [_channelCid objectAtIndex:index];
+             [TodayAPI getChannelNewsByID:cidStr];
+             
+             
+             UIViewController *currentController = [_channelArray objectAtIndex:index];
+             currentController.view.hidden = NO;
+             
+             UIViewController *nextController = [_channelArray objectAtIndex:index+1];
+             CGRect frame = [nextController.view frame];
+             frame.origin.x = 1024;
+             [nextController.view setFrame: frame];
+             nextController.view.hidden = NO;
+             
+             [UIView animateWithDuration:ChannelAnimationTime animations:^{
+                 CGRect bounds = [currentController.view frame];
+                 bounds.origin.x = -1024;
+                 [currentController.view setFrame: bounds];
+                 
+                 
+             }];
+             
+             [UIView animateWithDuration:ChannelAnimationTime animations:^{
+                 
+                 
+                 CGRect boundsNext = [nextController.view frame];
+                 boundsNext.origin.x = 0;
+                 [nextController.view setFrame: boundsNext];
+             }];
+             
+             _currentChannelIndex++;
+
+         });
+         
+         
+     }];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChageChannelNextNotification" object:nil];
+
+    
+}
+
+#pragma mark - 上一频道执行动画的通知
+- (void)addChageChannelLastNotification
+{
+    [NSNotificationCenter.defaultCenter addObserverForName:@"ChageChannelLastNotification"
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+         NSLog(@"ChageChannelLastNotification ********");
+         
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             
+             int index = _currentChannelIndex;
+             
+             [self unselectAllButton];
+             UIButton *currentButton = [_channelButtonArray objectAtIndex:_currentChannelIndex-1];
+             currentButton.selected = YES;
+             
+             if (index>1) {
+                 NSString *cidStr = [_channelCid objectAtIndex:index-2];
+                 [TodayAPI getChannelNewsByID:cidStr];
+             }
+             
+             
+             UIViewController *currentController = [_channelArray objectAtIndex:index];
+             currentController.view.hidden = NO;
+             
+             UIViewController *laseController = [_channelArray objectAtIndex:index-1];
+             CGRect frame = [laseController.view frame];
+             frame.origin.x = -1024;
+             [laseController.view setFrame: frame];
+             laseController.view.hidden = NO;
+             
+             [UIView animateWithDuration:ChannelAnimationTime animations:^{
+                 CGRect bounds = [currentController.view frame];
+                 bounds.origin.x = 1024;
+                 [currentController.view setFrame: bounds];
+                 
+                 
+             }];
+             
+             [UIView animateWithDuration:ChannelAnimationTime animations:^{
+                 
+                 
+                 CGRect boundsNext = [laseController.view frame];
+                 boundsNext.origin.x = 0;
+                 [laseController.view setFrame: boundsNext];
+             }];
+             
+             _currentChannelIndex--;
+             
+         });
+         
+         
+     }];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChageChannelLastNotification" object:nil];
+    
+    
+}
+
+
 #pragma mark - 显示详细页得通知
 
 - (void)addAppearDetailViewNotification
@@ -523,9 +718,14 @@
 
 - (IBAction)jinritoutiao:(id)sender {
     NSLog(@"jin ri tou tiao");
-
+    _currentChannelIndex = 0;
+    
+    [TodayAPI getTodayHeadInformation];
+    [TodayAPI getTodayThreeHeadInformation];
+    [TodayAPI getTodayChannelInformation];
     [self hideAllView];
     
+    _todayController.view.frame = CGRectMake(0, 100, 1024, 668);
     _todayController.view.hidden = NO;
     
     [self unselectAllButton];
@@ -538,10 +738,13 @@
 
 - (IBAction)zhuanlan:(id)sender {
     NSLog(@"zhuan lan");
+    _currentChannelIndex = 1;
+    
     [TodayAPI getChannelNewsByID:cidZhuanLan];
 
     [self hideAllView];
-
+    
+    _zhuanLan.view.frame = CGRectMake(0, 100, 1024, 668);
     _zhuanLan.view.hidden = NO;
     
     [self unselectAllButton];
@@ -553,10 +756,13 @@
 
 - (IBAction)bangdan:(id)sender {
     NSLog(@"bang dan");
+    _currentChannelIndex = 2;
+    
     [TodayAPI getChannelNewsByID:cidBangDan];
     
     [self hideAllView];
     
+    _bangdan.view.frame = CGRectMake(0, 100, 1024, 668);
     _bangdan.view.hidden = NO;
     
     [self unselectAllButton];
@@ -569,10 +775,13 @@
 
 - (IBAction)fuhao:(id)sender {
     NSLog(@"fu hao");
+    _currentChannelIndex = 3;
+    
     [TodayAPI getChannelNewsByID:cidFuhao];
 
     [self hideAllView];
     
+    _fuhao.view.frame = CGRectMake(0, 100, 1024, 668);
     _fuhao.view.hidden = NO;
 
     [self unselectAllButton];
@@ -585,10 +794,13 @@
 
 - (IBAction)chuangye:(id)sender {
     NSLog(@"chuang ye");
+    _currentChannelIndex = 4;
+    
     [TodayAPI getChannelNewsByID:cidChuangYe];
 
     [self hideAllView];
     
+    _chuangye.view.frame = CGRectMake(0, 100, 1024, 668);
     _chuangye.view.hidden = NO;
 
     [self unselectAllButton];
@@ -601,10 +813,13 @@
 
 - (IBAction)keji:(id)sender {
     NSLog(@"ke ji");
+    _currentChannelIndex = 5;
+    
     [TodayAPI getChannelNewsByID:cidKeJi];
 
     [self hideAllView];
     
+    _keji.view.frame = CGRectMake(0, 100, 1024, 668);
     _keji.view.hidden = NO;
 
     [self unselectAllButton];
@@ -617,10 +832,13 @@
 
 - (IBAction)shangye:(id)sender {
     NSLog(@"shang ye");
+    _currentChannelIndex = 6;
+    
     [TodayAPI getChannelNewsByID:cidShangYe];
 
     [self hideAllView];
-
+    
+    _shangye.view.frame = CGRectMake(0, 100, 1024, 668);
     _shangye.view.hidden = NO;
 
     [self unselectAllButton];
@@ -632,10 +850,13 @@
 
 - (IBAction)touzi:(id)sender {
     NSLog(@"tou zi");
+    _currentChannelIndex = 7;
+    
     [TodayAPI getChannelNewsByID:cidTouZi];
 
     [self hideAllView];
     
+    _touzi.view.frame = CGRectMake(0, 100, 1024, 668);
     _touzi.view.hidden = NO;
 
     [self unselectAllButton];
@@ -648,10 +869,13 @@
 
 - (IBAction)chengshi:(id)sender {
     NSLog(@"sheng shi");
+    _currentChannelIndex = 8;
+    
     [TodayAPI getChannelNewsByID:cidChengShi];
 
     [self hideAllView];
     
+    _chengshi.view.frame = CGRectMake(0, 100, 1024, 668);
     _chengshi.view.hidden = NO;
 
     [self unselectAllButton];
@@ -664,10 +888,13 @@
 
 - (IBAction)shenghuo:(id)sender {
     NSLog(@"sheng huo");
+    _currentChannelIndex = 9;
+    
     [TodayAPI getChannelNewsByID:cidShengHuo];
 
     [self hideAllView];
     
+    _shenghuo.view.frame = CGRectMake(0, 100, 1024, 668);
     _shenghuo.view.hidden = NO;
 
     [self unselectAllButton];
@@ -680,10 +907,13 @@
 
 - (IBAction)tuji:(id)sender {
     NSLog(@"tu ji");
+    _currentChannelIndex = 10;
+    
     [TodayAPI getChannelNewsByID:cidShengHuo];
 
     [self hideAllView];
     
+    _tuji.view.frame = CGRectMake(0, 100, 1024, 668);
     _tuji.view.hidden = NO;
 
     [self unselectAllButton];
