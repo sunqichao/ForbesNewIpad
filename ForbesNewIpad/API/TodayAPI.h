@@ -75,10 +75,20 @@
 + (void)registerWithUserName:(NSString *)name nickName:(NSString *)nickName keyWord:(NSString *)keyWord;
 
 
+/*
+ 
+ 获取往期杂志列表数据数组
+ 
+ */
++ (id)getWangqiList;
 
 
-
-
+/*
+ 
+ 获取杂志目录列表数据数组
+ 
+ */
++ (id)getMuLuList;
 
 
 

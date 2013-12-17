@@ -583,6 +583,7 @@
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
+             
              _favoriteController.view.hidden = NO;
              
          });
@@ -607,6 +608,10 @@
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
+             
+             //获取往期列表
+             [TodayAPI getWangqiList];
+             
              _wangQiController.view.hidden = NO;
              
          });
@@ -975,7 +980,8 @@
 
 - (IBAction)openMuLu:(id)sender {
     NSLog(@"mulu  ");
-    
+    [TodayAPI getMuLuList];
+
     [self hideTopBarView];
     
     _muluController.view.hidden = NO;

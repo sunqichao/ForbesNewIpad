@@ -1,14 +1,14 @@
 //
-//  MuLuCell.m
+//  WangQiCell.m
 //  ForbesNewIpad
 //
-//  Created by sun qichao on 13-12-12.
+//  Created by sun qichao on 13-12-16.
 //  Copyright (c) 2013年 sun qichao. All rights reserved.
 //
 
-#import "MuLuCell.h"
+#import "WangQiCell.h"
 
-@implementation MuLuCell
+@implementation WangQiCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,30 +26,29 @@
     // Configure the view for the selected state
 }
 
-
 - (void)setDataSource:(id)dataSource
 {
     NSDictionary *dic = (NSDictionary *)dataSource;
-    _titleLabel.text = [dic objectForKey:@"title"];
 
+    [_mainView setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"img_src_list"]] placeholderImage:[UIImage imageNamed:defaultImage]];
+    _title.text = [dic objectForKey:@"title"];
+    
 }
 
-
-+ (MuLuCell *)cellFromNibNamed:(NSString *)nibName
++ (WangQiCell *)cellFromNibNamed:(NSString *)nibName
 {
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:NULL];
     NSEnumerator *nibEnumerator = [nibContents objectEnumerator];
-    MuLuCell *customCell = nil;
+    WangQiCell *customCell = nil;
     NSObject* nibItem = nil;
     while ((nibItem = [nibEnumerator nextObject]) != nil)
     {
-        if ([nibItem isKindOfClass:[MuLuCell class]])
+        if ([nibItem isKindOfClass:[WangQiCell class]])
         {
-            customCell = (MuLuCell *)nibItem;
+            customCell = (WangQiCell *)nibItem;
             break;
         }
     }
     return customCell;
 }
-
 @end

@@ -42,8 +42,8 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-9E-3zq">
-                        <rect key="frame" x="290" y="43" width="30" height="35"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconPlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-9E-3zq">
+                        <rect key="frame" x="283" y="43" width="37" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
@@ -57,6 +57,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="CellIcon.png" width="50" height="54"/>
+        <image name="iconPlay.png" width="26" height="26"/>
     </resources>
 </document>
