@@ -84,7 +84,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"PinDaoTouTiaoNotification ********");
+         DLog(@"PinDaoTouTiaoNotification ********");
          
          _dataSource = [note object];
          
@@ -101,7 +101,7 @@
                  
              }else
              {
-                 NSLog(@"频道页数据出错");
+                 DLog(@"频道页数据出错");
              }
              
          });

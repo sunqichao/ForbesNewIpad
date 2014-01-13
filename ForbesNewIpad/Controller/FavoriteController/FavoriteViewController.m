@@ -42,7 +42,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"FavoriteNotification ********");
+         DLog(@"FavoriteNotification ********");
          
          _dataSource = [CoreDataManager getFavotieList];
          
@@ -52,7 +52,7 @@
                  
              }else
              {
-                 NSLog(@"favorite 列表出错");
+                 DLog(@"favorite 列表出错");
              }
              
          });

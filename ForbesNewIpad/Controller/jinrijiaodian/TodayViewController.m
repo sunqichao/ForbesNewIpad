@@ -85,7 +85,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"TouTiaoNotification ********");
+         DLog(@"TouTiaoNotification ********");
          _headlineData = [note object];
          
          dispatch_async(dispatch_get_main_queue(), ^{
@@ -115,7 +115,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"TouTiaoThreeNotification ********");
+         DLog(@"TouTiaoThreeNotification ********");
 
          _threeHeadlineData = [note object];
          
@@ -128,7 +128,7 @@
                  _thirdLabel.text = [_threeHeadlineData objectAtIndex:2][TextKey];
              }else
              {
-                 NSLog(@"今日头三条出错");
+                 DLog(@"今日头三条出错");
              }
              
              
@@ -150,7 +150,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"PinDaoTouTiaoNotification ********");
+         DLog(@"PinDaoTouTiaoNotification ********");
          
          _channelHeadlineData = [note object];
          
@@ -160,7 +160,7 @@
 
              }else
              {
-                 NSLog(@"频道头条列表出错");
+                 DLog(@"频道头条列表出错");
              }
 
          });

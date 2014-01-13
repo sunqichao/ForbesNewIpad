@@ -33,7 +33,6 @@
         NSString *detail = [[NSString stringWithFormat:@"%@",[dic objectForKey:@"description"]?[dic objectForKey:@"description"]:@""]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         channelNews.titleDetailText = detail;
         
-        NSLog(@"%@",channelNews.mainImage);
         NSError *error;
         if (![context save:&error]) {
             isSuccess = NO;

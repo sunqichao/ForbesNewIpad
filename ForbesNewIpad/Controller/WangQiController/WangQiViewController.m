@@ -47,7 +47,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"WangQiNotification ********");
+         DLog(@"WangQiNotification ********");
          
          _dataSource = [note object];
          
@@ -57,7 +57,7 @@
                  
              }else
              {
-                 NSLog(@"wangqi 列表出错");
+                 DLog(@"wangqi 列表出错");
              }
              
          });

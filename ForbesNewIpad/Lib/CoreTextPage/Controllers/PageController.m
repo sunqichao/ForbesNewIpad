@@ -159,7 +159,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"UpdateXinWenViewNotification ********");
+         DLog(@"UpdateXinWenViewNotification ********");
          ArticleContentEntity *article = [note object];
          self.pageData = article;
          dispatch_async(dispatch_get_main_queue(), ^{

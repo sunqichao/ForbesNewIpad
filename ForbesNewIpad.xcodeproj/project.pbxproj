@@ -227,6 +227,7 @@
 		E77267F9184C8FB600FDBF35 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		E77267FA184C8FB600FDBF35 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
 		E77267FB184C8FB600FDBF35 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		E777F143187FBD2D009DB910 /* SQCDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQCDefine.h; path = SQCUtilies/SQCDefine.h; sourceTree = "<group>"; };
 		E7793A01185ED10E00D4BB1B /* WangQiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WangQiCell.h; sourceTree = "<group>"; };
 		E7793A02185ED10E00D4BB1B /* WangQiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WangQiCell.m; sourceTree = "<group>"; };
 		E7793A04185ED11900D4BB1B /* WangQiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WangQiCell.xib; path = ForbesNewIpad/WangQiCell.xib; sourceTree = SOURCE_ROOT; };
@@ -513,6 +514,7 @@
 		E711686918585BC7003FF581 /* SQCUtilies */ = {
 			isa = PBXGroup;
 			children = (
+				E777F143187FBD2D009DB910 /* SQCDefine.h */,
 				E711686A18585BEC003FF581 /* NSString_RegEx.h */,
 				E711686B18585BEC003FF581 /* NSString_RegEx.m */,
 				E711686C18585BEC003FF581 /* SQC_StringUtility.h */,
@@ -1393,13 +1395,13 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sun qichao (7HXJEK73Z8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Ying (P57Y27Q3JY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
 				INFOPLIST_FILE = "ForbesNewIpad/ForbesNewIpad-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "41162E6F-A8A2-4260-9001-B7D8E6B901BB";
+				PROVISIONING_PROFILE = "C8237F7A-93C8-482F-87C9-E783EABD6006";
 				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1411,13 +1413,13 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sun qichao (7HXJEK73Z8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Ying (P57Y27Q3JY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ForbesNewIpad/ForbesNewIpad-Prefix.pch";
 				INFOPLIST_FILE = "ForbesNewIpad/ForbesNewIpad-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "41162E6F-A8A2-4260-9001-B7D8E6B901BB";
+				PROVISIONING_PROFILE = "C8237F7A-93C8-482F-87C9-E783EABD6006";
 				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};

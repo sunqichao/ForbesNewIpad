@@ -54,7 +54,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"MuLuNotification ********");
+         DLog(@"MuLuNotification ********");
          
          _dataSource = [note object];
          
@@ -64,7 +64,7 @@
                  
              }else
              {
-                 NSLog(@"mu lu 列表出错");
+                 DLog(@"mu lu 列表出错");
              }
              
          });

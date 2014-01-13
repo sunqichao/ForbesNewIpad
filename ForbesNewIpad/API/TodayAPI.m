@@ -277,11 +277,7 @@
             
             NSDictionary *diction = [[CJSONDeserializer deserializer] deserialize:data error:&error];
             
-            //            [[NSUserDefaults standardUserDefaults] setObject:diction forKey:@"getChannelNewsInformationKey"];
-            //            [[NSUserDefaults standardUserDefaults] synchronize];
-            
             [[NSNotificationCenter defaultCenter] postNotificationName:notificationName object:diction];
-            
             
             
         }
@@ -315,7 +311,7 @@
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginDoneViewNotification" object:nil];
 
-        NSLog(@"登陆接口返回数据  %@", diction);
+        DLog(@"登陆接口返回数据  %@", diction);
     });
     
     
@@ -365,7 +361,7 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"RegisterDoneViewNotification" object:nil];
         
-        NSLog(@"注册接口返回数据  %@", diction);
+        DLog(@"注册接口返回数据  %@", diction);
     });
 
 }
@@ -401,9 +397,6 @@
             NSError *error;
             
             NSArray *array = [[CJSONDeserializer deserializer] deserialize:data error:&error];
-            
-            [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"getWangqiListInformation"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
             
             [[NSNotificationCenter defaultCenter] postNotificationName:@"WangQiNotification" object:array];
             

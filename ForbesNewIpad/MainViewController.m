@@ -294,7 +294,7 @@
     
     if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
         
-        NSLog(@"下一频道");
+        DLog(@"下一频道");
         //执行程序
         if (_currentChannelIndex==([_channelArray count]-1)) {
             
@@ -309,7 +309,7 @@
     
     if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
         
-        NSLog(@"上一频道");
+        DLog(@"上一频道");
         //执行程序
         if (!_currentChannelIndex==0) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"ChageChannelLastNotification" object:nil];
@@ -329,7 +329,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"ChageChannelNextNotification ********");
+         DLog(@"ChageChannelNextNotification ********");
          
          
          dispatch_async(dispatch_get_main_queue(), ^{
@@ -391,7 +391,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"ChageChannelLastNotification ********");
+         DLog(@"ChageChannelLastNotification ********");
          
          
          dispatch_async(dispatch_get_main_queue(), ^{
@@ -455,7 +455,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"AppearDetailViewNotification ********");
+         DLog(@"AppearDetailViewNotification ********");
          
          NSString *newsID = [note object];
          
@@ -485,7 +485,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"HidenDetailViewNotification ********");
+         DLog(@"HidenDetailViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              _detailController.view.hidden = YES;
@@ -508,7 +508,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"HidenTopBarViewNotification ********");
+         DLog(@"HidenTopBarViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -531,7 +531,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"AppearRegisterViewNotification ********");
+         DLog(@"AppearRegisterViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -555,7 +555,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"AppearLoginViewNotification ********");
+         DLog(@"AppearLoginViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -579,7 +579,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"AppearFavotieViewNotification ********");
+         DLog(@"AppearFavotieViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -604,7 +604,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"AppearWangQiViewNotification ********");
+         DLog(@"AppearWangQiViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -633,7 +633,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"LoginDoneViewNotification ********");
+         DLog(@"LoginDoneViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -656,7 +656,7 @@
                                                      queue:nil
                                                 usingBlock:^(NSNotification *note)
      {
-         NSLog(@"RegisterDoneViewNotification ********");
+         DLog(@"RegisterDoneViewNotification ********");
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self hideTopBarView];
@@ -722,7 +722,7 @@
 #pragma mark - 今日头条
 
 - (IBAction)jinritoutiao:(id)sender {
-    NSLog(@"jin ri tou tiao");
+    DLog(@"jin ri tou tiao");
     _currentChannelIndex = 0;
     
     [TodayAPI getTodayHeadInformation];
@@ -742,25 +742,22 @@
 #pragma mark - 专栏
 
 - (IBAction)zhuanlan:(id)sender {
-    NSLog(@"zhuan lan");
+    DLog(@"zhuan lan");
     _currentChannelIndex = 1;
-    
-    [TodayAPI getChannelNewsByID:cidZhuanLan];
-
     [self hideAllView];
-    
+    [self unselectAllButton];
     _zhuanLan.view.frame = CGRectMake(0, 100, 1024, 668);
     _zhuanLan.view.hidden = NO;
-    
-    [self unselectAllButton];
-    
     _channelZhuanLan.selected = YES;
+
+    [TodayAPI getChannelNewsByID:cidZhuanLan];
+
 }
 
 #pragma mark - 榜单
 
 - (IBAction)bangdan:(id)sender {
-    NSLog(@"bang dan");
+    DLog(@"bang dan");
     _currentChannelIndex = 2;
     
     [TodayAPI getChannelNewsByID:cidBangDan];
@@ -779,7 +776,7 @@
 #pragma mark - 富豪
 
 - (IBAction)fuhao:(id)sender {
-    NSLog(@"fu hao");
+    DLog(@"fu hao");
     _currentChannelIndex = 3;
     
     [TodayAPI getChannelNewsByID:cidFuhao];
@@ -798,7 +795,7 @@
 #pragma mark - 创业
 
 - (IBAction)chuangye:(id)sender {
-    NSLog(@"chuang ye");
+    DLog(@"chuang ye");
     _currentChannelIndex = 4;
     
     [TodayAPI getChannelNewsByID:cidChuangYe];
@@ -817,7 +814,7 @@
 #pragma mark - 科技
 
 - (IBAction)keji:(id)sender {
-    NSLog(@"ke ji");
+    DLog(@"ke ji");
     _currentChannelIndex = 5;
     
     [TodayAPI getChannelNewsByID:cidKeJi];
@@ -836,7 +833,7 @@
 #pragma mark - 商业
 
 - (IBAction)shangye:(id)sender {
-    NSLog(@"shang ye");
+    DLog(@"shang ye");
     _currentChannelIndex = 6;
     
     [TodayAPI getChannelNewsByID:cidShangYe];
@@ -854,7 +851,7 @@
 #pragma mark - 投资
 
 - (IBAction)touzi:(id)sender {
-    NSLog(@"tou zi");
+    DLog(@"tou zi");
     _currentChannelIndex = 7;
     
     [TodayAPI getChannelNewsByID:cidTouZi];
@@ -873,7 +870,7 @@
 #pragma mark - 城市
 
 - (IBAction)chengshi:(id)sender {
-    NSLog(@"sheng shi");
+    DLog(@"sheng shi");
     _currentChannelIndex = 8;
     
     [TodayAPI getChannelNewsByID:cidChengShi];
@@ -892,7 +889,7 @@
 #pragma mark - 生活
 
 - (IBAction)shenghuo:(id)sender {
-    NSLog(@"sheng huo");
+    DLog(@"sheng huo");
     _currentChannelIndex = 9;
     
     [TodayAPI getChannelNewsByID:cidShengHuo];
@@ -911,7 +908,7 @@
 #pragma mark - 图集
 
 - (IBAction)tuji:(id)sender {
-    NSLog(@"tu ji");
+    DLog(@"tu ji");
     _currentChannelIndex = 10;
     
     [TodayAPI getChannelNewsByID:cidShengHuo];
@@ -930,7 +927,7 @@
 #pragma mark - 登录方法
 
 - (IBAction)login:(id)sender {
-    NSLog(@"login ");
+    DLog(@"login ");
     
     [self hideTopBarView];
     
@@ -941,7 +938,7 @@
 #pragma mark - about 页面 （方法名错了，不想改了）
 
 - (IBAction)registerNumber:(id)sender {
-    NSLog(@"about ");
+    DLog(@"about ");
     
     [self hideTopBarView];
     
@@ -953,33 +950,36 @@
 #pragma mark - 收藏方法
 
 - (IBAction)favoriteArticle:(id)sender {
-    NSLog(@"favorite  ");
+    DLog(@"favorite  ");
     
     [self hideTopBarView];
     
     _favoriteController.view.hidden = NO;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteNotification" object:nil];
-
+   
 }
 
+#pragma mark - 回到首页
+
 - (IBAction)backToHome:(id)sender {
-    NSLog(@"open home");
+    DLog(@"open home");
     
     [self hideAllView];
     [self hideTopBarView];
-
-    _todayController.view.hidden = NO;
-    
     [self unselectAllButton];
+
+    _todayController.view.hidden = NO;      //今日头条显示
     
     _channelJinritoutian.selected = YES;
     
     
 }
 
+#pragma mark - 打开目录
+
 - (IBAction)openMuLu:(id)sender {
-    NSLog(@"mulu  ");
+    DLog(@"mulu  ");
     [TodayAPI getMuLuList];
 
     [self hideTopBarView];
